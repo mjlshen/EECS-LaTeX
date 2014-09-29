@@ -101,7 +101,7 @@
 		\item Electrical lines connecting cities by hundreds of km
 		\item VHF antenna from rabbit ear antenna to TV
 	\end{enumerate}
-	\item A major assumption of a wire in DC analysis is that the signal travels instantly down the line. In fact, it is limited to the speed of light. Therefore, as the length of the line increases, the time delay from the moment the signal enters one end of a wire to the moment it reaches the other end of the wire increases. For a signal given by \emph{A}cos($\omega\emph{t}-\beta\emph{z}$), this time delay manifests itself as a phase shift of magnitude $\beta\epmh{z}$.
+	\item A major assumption of a wire in DC analysis is that the signal travels instantly down the line. In fact, it is limited to the speed of light. Therefore, as the length of the line increases, the time delay from the moment the signal enters one end of a wire to the moment it reaches the other end of the wire increases. For a signal given by \emph{A}cos($\omega\emph{t}-\beta\emph{z}$), this time delay manifests itself as a phase shift of magnitude $\beta\emph{z}$.
 \end{enumerate}
 
 \section{Standing Waves on the Slotted Line}
@@ -213,7 +213,8 @@
 
 \subsection{Analysis}
 \begin{enumerate}
-	\item
+	%Analysis 3.1
+	\item \textbf{FINISH ME}
 	
 	%Analysis 3.2
 	\item Using Eq. XXX for the reflection coefficient and the fact that $Z_0$ = 50 $\Omega$,
@@ -229,7 +230,7 @@
 	\centering
 		\begin{tabular}{|l|c|c|c|}
 		\hline
-		\textbf{Load}     & $\vert\Gamma\vert_{dB}$ & $\vert\Gamma\vert_{linear}$ & $\vert\Gamma\vert_{theoritical}$ \\ \hline
+		\textbf{Load}     & $\vert\Gamma\vert_{dB}$ & $\vert\Gamma\vert_{linear}$ & $\vert\Gamma\vert_{theoretical}$ \\ \hline
 		Short (uncal)     & 0.751 	  & 1.09      &    1      \\ \hline
 		Short (cal)       & 1.00      & 1.12      &    1      \\ \hline
 		Open              & 1.00  	  & 1.12      &    1      \\ \hline
@@ -238,17 +239,33 @@
 		\caption{Analysis 3.2}
 		\label{}
 	\end{table}	
-	
-	\item
+
+	%Analysis 3.3
+	\item The equation relating the standing wave ratio $S$ and the reflection coefficient $\Gamma$ is:
+	\begin{equation} 
+		S = \frac{1 + \vert\Gamma\vert}{1 - \vert\Gamma\vert}
+	\end{equation}
+	Since $\Gamma$ can be assumed to be real, $\Gamma$ = $\vert\Gamma\vert$. Thus, Eq. XXX can be rewritten as:
+	\begin{equation}
+		\Gamma = \frac{S - 1}{S + 1}
+	\end{equation}
+	By substituting the measured $S_{min}$ = 1.513, it follows that $\Gamma$ = 0.204. By solving Eq. XXX for $Z_L$, again using the fact that $\Gamma = \vert\Gamma\vert$:
+	\begin{equation}
+		Z_L = Z_0\frac{1 + \Gamma}{1 - \Gamma} = Z_0 S
+	\end{equation}	 
+	Finally, using Eq. XXX and the fact that $Z_0$ = 50 $\Omega$, it follows that $Z_L$ = 75.65 $\Omega$ at the frequency where the SWR minimum was measured, 170.5 MHz.
 \end{enumerate}
 \subsection{Questions}
 \begin{enumerate}
-	\item 
-	\item
+	%Question 3.1
+	\item \textbf{FINISH ME}
+	
+	%Question 3.2
+	\item Since $Z_L$ = 75.65 $\Omega$ and using Eq. XXX and XXX
 	\begin{enumerate}
-		\item
-		\item
-		\item
+		\item A 50 $\Omega$ transmission line system is what the antenna was tested with and results in $S$ = 1.513 at 170.5 MHz. Thus, the antenna works well with this system.
+		\item A 75 $\Omega$ transmission line system is nearly matched and results in $S$ = 1.009 at 170.5 MHz. Thus, the antenna works well with this system.
+		\item A 300 $\Omega$ transmission line system results in $S$ = 3.965. Thus, the antenna does not work well with this system.
 	\end{enumerate}
 \end{enumerate}
 
