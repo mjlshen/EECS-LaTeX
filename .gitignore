@@ -1,0 +1,5 @@
+# Compiled TeX files #
+*.aux
+*.log
+*.pdf
+*.gz
