@@ -12,27 +12,32 @@ capacitor = [0.91 0.85 0.70 0.50 0.22 0.0065 0.26 0.54 0.75 0.87 0.90];
 
 plot(lambda, short)
 title('Normalized voltage plot for a shorted load')
-xlabel('Multiples of lambda')
+xlabel('Multiples of lambda away from the load')
 ylabel('Normalized voltage (V)')
+axis([0 0.5 0 1])
 pause
 plot(lambda, open)
 title('Normalized voltage plot for an open load')
-xlabel('Multiples of lambda')
+xlabel('Multiples of lambda away from the load')
 ylabel('Normalized voltage (V)')
+axis([0 0.5 0 1])
 pause
 plot(lambda, matched)
 title('Normalized voltage plot for a matched load')
-xlabel('Multiples of lambda')
+xlabel('Multiples of lambda away from the load')
 ylabel('Normalized voltage (V)')
+axis([0 0.5 0 1])
 pause
 plot(lambda, resistor)
 title('Normalized voltage plot for a resistive load')
-xlabel('Multiples of lambda')
+xlabel('Multiples of lambda away from the load')
 ylabel('Normalized voltage (V)')
+axis([0 0.5 0 1])
 pause
 plot(lambda, capacitor)
 title('Normalized voltage plot for a capacitive load')
-xlabel('Multiples of lambda')
+xlabel('Multiples of lambda away from the load')
 ylabel('Normalized voltage (V)')
+axis([0 0.5 0 1])
 pause
 close

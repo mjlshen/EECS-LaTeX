@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{gensymb, amsmath, float, graphicx}
+\usepackage{gensymb, amsmath, float, graphicx, epstopdf}
 \restylefloat{table}
 \usepackage[margin=0.75in]{geometry}
 \graphicspath{ {./Images} }
@@ -155,7 +155,8 @@
 	\item The distance between the first minimum and maximum is 190 $mm$ - 116 $mm$ = 74 $mm$ or 0.247$\lambda$. This is very similar to the theoretical value of $\frac{\lambda}{4}$.
 	
 	%Analysis 2.3
-	\item \textbf{Insert Plotssssszzsss}
+	\item Plots are appended at the end of the document, pg. 5-7. The shorted load has a voltage minimum at the load, followed by a maximum $\frac{\lambda}{4}$ away from the load, followed by a minimum $\frac{\lambda}{2}$ away from the load, as expected. The open load has the exact opposite behavior, starting at a voltage maximum, then a minimum, then ending at a maximum. The matched load exhibits a constant voltage across the entire measured range, matching expected behavior. The resistive load starts at an intermediate value, first reaches a maximum, then a minimum. Furthermore, it the magnitude of the normalized voltage does not approach 1 because some power is absorbed in the load. For the capacitive load, it appears to have the same response as the open load, but this would be a coincidence. It should be a phase shifted version of the open or short circuit responses.
+
 	\begin{table}[h]
 	\centering
 		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
@@ -261,7 +262,30 @@
 	\end{enumerate}
 \end{enumerate}
 
-\section{Images}
+\section{Figures \& Images}
+%Analysis 2.3 plots
+\begin{figure}[H]
+	\centering
+   	\includegraphics[scale = 0.85]{./Matlab/Short.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+   	\includegraphics[scale = 0.85]{./Matlab/Open.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+   	\includegraphics[scale = 0.85]{./Matlab/Matched.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+   	\includegraphics[scale = 0.85]{./Matlab/Resistive.eps}
+\end{figure}
+\begin{figure}[H]
+	\centering
+   	\includegraphics[scale = 0.85]{./Matlab/Capacitive.eps}
+\end{figure}
+
+%In lab photos
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{./Images/RoleWave1.jpg}
