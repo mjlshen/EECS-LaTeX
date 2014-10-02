@@ -13,6 +13,7 @@
 \subsection{Measured Data}
 %Use table to align "equations" correctly
 \begin{table}[h]
+\centering
 	\begin{tabular}{rl}
 	$R_{1}$ =  & 2212 $\Omega$  \\
 	$R_{2}$ =  & 1808 $\Omega$      
@@ -84,21 +85,21 @@
 	\end{table}
 	
 	%Analysis 1.4
-	For $f_1$ = 100 kHz, the computed $v_{out}$ is almost identical to the measured $v_2$ in lab using the 12" cable and very similar using the 180" cable. There is a 0.39 \% difference for the 12" cable and a 3.09\% difference for the 180" cable. On the other hand, $v_{out}$ is completely different from the measured $v_2$ in lab for $f_2$ = 100 MHz (Table 3).
+	For $f_1$ = 100 kHz, the computed $v_{out}$ is almost identical to the measured $v_2$ in lab using the 12" cable and very similar using the 180" cable. There is a 0.39 \% difference for the 12" cable and a 3.09\% difference for the 180" cable. On the other hand, $v_{out}$ is completely different from the measured $v_2$ in lab for $f_2$ = 100 MHz (Table 3, pg. 1).
 	
 	%Analysis 1.5
-	\item As the ratio between the length of the cable and the wavelength in the circuit increases past 0.01, basic circuit analysis fails and we must use transmission line theory. If we do not, the phase delays of the signal and the interferences, constructive and destructive, on the line from the reflected wave become significant, causing in otherwise unexpected measurements.
+	\item As the ratio between the length of the cable and the wavelength in the circuit increases past 0.01, basic circuit analysis fails and we must use transmission line theory. If we do not, the phase delays of the signal and the interferences, constructive and destructive, on the line from the reflected wave become significant, causing otherwise unexpected measurements.
 \end{enumerate}
 
 \subsection{Questions}
 \begin{enumerate}
-	\item I would expect that the output voltage of the RF signal source to be constant over the frequency range examined because the signal source was rated to be able to provide such a signal. However I did not observe and constant output voltage on channel 1 (Table 3). This is because there was a 24" BNC cable connecting the RF signal source to the oscilloscope. For the 100 MHz signal, this results in a 3.36 $l:\lambda$ ratio, so there is significant interference from the reflected wave and the line no longer acts as an ideal wire; it must be treated as a transmission line. 
-	\item Which of 
+	\item I would expect that the output voltage of the RF signal source to be constant over the frequency range examined because the signal source was rated to be able to provide such a signal. However I did not observe and constant output voltage on channel 1 (Table 3, pg. 1). This is because there was a 24" BNC cable connecting the RF signal source to the oscilloscope. For the 100 MHz signal, this results in a 3.36 $l:\lambda$ ratio, so there is significant interference from the reflected wave and the line no longer acts as an ideal wire; it must be treated as a transmission line. 
+	\item 
 	\begin{enumerate}
-		\item Integrated circuit (500 MHz --> 1 GHz)
-		\item Electrical lines in house
-		\item Electrical lines connecting cities by hundreds of km
-		\item VHF antenna from rabbit ear antenna to TV
+		\item An integrated circuit operating within 500 - 1000 MHz results in wavelengths between $0.3 - 0.6 m$, assuming $\varepsilon_r = 1$ (Eq. 1, pg. 1). If $\varepsilon_r = 1.9$, as in the lab, then the wavelengths will be between $0.212 - 0.435 m$. This means that lines of lengths of $3 - 6mm$ or $2.12 - 4.35mm$ must be treated as transmission lines. Since integrated circuit boards are often much larger than these ranges, an integrated circuit within 500 - 100 MHz needs to be treated as a transmission line system.
+		\item Electrical lines in house operate at 50 or 60 Hz, depending on location. Following the same procedure as before, this results in wavelengths between $5000 - 6000 km$, assuming $\varepsilon_r = 1$, or $3627 - 4352 km$, if $\varepsilon_r = 1.9$ (Eq. 1, pg. 1). Houses, most of the time, do not contain nearly large enough dimensions to house cables of lengths from $36 - 60km$, so electrical lines running through a house does not need to be treated as a transmission line system.
+		\item Using the same results as above, electrical lines connecting cities separated by hundreds of kilometers need to be treated as a transmission line system, because the length of the cables is larger than $36 - 60km$, with the same assumption that $\varepsilon_r = 1$ or $\varepsilon_r = 1.9$
+		\item A VHF antenna from rabbit ear antenna to TV operates at frequencies between 30 - 300 MHz. This results in wavelengths between $1 - 10m$, assuming $\varepsilon_r = 1$. Likewise, wavelengths between $0.725 - 7.25m$ if the assumption is instead $\varepsilon_r = 1.9$ (Eq. 1, pg. 1). The cable connecting the antenna and TV is longer than $7 - 100mm$, so this needs to be treated as a transmission line system.
 	\end{enumerate}
 	\item A major assumption of a wire in DC analysis is that the signal travels instantly down the line. In fact, it is limited to the speed of light. Therefore, as the length of the line increases, the time delay from the moment the signal enters one end of a wire to the moment it reaches the other end of the wire increases. For a signal given by \emph{A}cos($\omega\emph{t}-\beta\emph{z}$), this time delay manifests itself as a phase shift of magnitude $\beta\emph{z}$.
 \end{enumerate}
@@ -126,8 +127,6 @@
 	Resistive termination value =  & 10 $\Omega$ \\
 	Capacitive termination value = & 39 $(pF)$      
 	\end{tabular}
-	\caption{Standing Waves - Loads}
-	\label{my-label}
 \end{table}
 
 
@@ -137,11 +136,11 @@
 	\multicolumn{12}{|c|}{\textbf{Probe Position ($\lambda$)}}                                                               	& \multicolumn{2}{c|}{\textbf{Minimum}} \\ \hline
 	\textbf{Load}       & 0    & $\frac{\lambda}{20}$    & $\frac{2\lambda}{20}$    & $\frac{3\lambda}{20}$    & $\frac{4\lambda}{20}$     & $\frac{5\lambda}{20}$     & $\frac{6\lambda}{20}$     & $\frac{7\lambda}{20}$    & $\frac{8\lambda}{20}$    & $\frac{9\lambda}{20}$    & $\frac{10\lambda}{20}$   & Pos.         & Vol.          \\ \hline
 	Probe Position (mm) & 116  & 131  & 146  & 161  & 176   & 191   & 206   & 221  & 236  & 251  & 266  & X            & X             \\ \hline
-	Short               & 0.02 & 0.81 & 1.79 & 2.49 & 2.89  & 3.00  & 2.77  & 2.29 & 1.65 & 0.76 & 0.02 & 116          & 0.02          \\ \hline
-	Open                & 2.75 & 2.59 & 2.19 & 1.59 & 0.736 & 0.032 & 0.643 & 1.53 & 2.21 & 2.61 & 2.73 & 193          & 0.02          \\ \hline
-	Matched             & 1.42 & 1.42 & 1.43 & 1.45 & 1.45  & 1.46  & 1.45  & 1.43 & 1.42 & 1.4  & 1.39 & 266          & 1.39          \\ \hline
-	Resistor            & 1.89 & 2.27 & 2.41 & 2.33 & 2.03  & 1.57  & 1.01  & 0.434& 0.591& 1.25 & 1.87 & 227          & 0.346         \\ \hline
-	Capacitor           & 2.79 & 2.61 & 2.17 & 1.53 & 0.687 & 0.02  & 0.79  & 1.65 & 2.31 & 2.69 & 2.77 & 191          & 0.02          \\ \hline
+	Short (V)           & 0.02 & 0.81 & 1.79 & 2.49 & 2.89  & 3.00  & 2.77  & 2.29 & 1.65 & 0.76 & 0.02 & 116          & 0.02          \\ \hline
+	Open (V)            & 2.75 & 2.59 & 2.19 & 1.59 & 0.736 & 0.032 & 0.643 & 1.53 & 2.21 & 2.61 & 2.73 & 193          & 0.02          \\ \hline
+	Matched (V)         & 1.42 & 1.42 & 1.43 & 1.45 & 1.45  & 1.46  & 1.45  & 1.43 & 1.42 & 1.4  & 1.39 & 266          & 1.39          \\ \hline
+	Resistor (V)        & 1.89 & 2.27 & 2.41 & 2.33 & 2.03  & 1.57  & 1.01  & 0.434& 0.591& 1.25 & 1.87 & 227          & 0.346         \\ \hline
+	Capacitor (V)       & 2.79 & 2.61 & 2.17 & 1.53 & 0.687 & 0.02  & 0.79  & 1.65 & 2.31 & 2.69 & 2.77 & 191          & 0.02          \\ \hline
 	\end{tabular}
 	\caption{Standing Waves - Loads}
 	\label{}
@@ -156,7 +155,7 @@
 	\item The distance between the first minimum and maximum is 190 $mm$ - 116 $mm$ = 74 $mm$ or 0.247$\lambda$. This is very similar to the theoretical value of $\frac{\lambda}{4}$.
 	
 	%Analysis 2.3
-	\item Insert Plotssssszzsss
+	\item \textbf{Insert Plotssssszzsss}
 	\begin{table}[h]
 	\centering
 		\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
@@ -164,11 +163,11 @@
 		\multicolumn{12}{|c|}{\textbf{Probe Position ($\lambda$)}}                                                         		\\ \hline
 		\textbf{Load}       & 0      & $\frac{\lambda}{20}$    & $\frac{2\lambda}{20}$    & $\frac{3\lambda}{20}$    & $\frac{4\lambda}{20}$    & $\frac{5\lambda}{20}$      & $\frac{6\lambda}{20}$    & $\frac{7\lambda}{20}$    & $\frac{8\lambda}{20}$    & $\frac{9\lambda}{20}$    & $\frac{10\lambda}{20}$     		\\ \hline
 		Probe Position (mm) & 116    & 131  & 146  & 161  & 176  & 191    & 206  & 221  & 236  & 251  & 266    		\\ \hline
-		Short               & 0.0065 & 0.26 & 0.58 & 0.81 & 0.94 & 0.97   & 0.90 & 0.74 & 0.54 & 0.25 & 0.0065 		\\ \hline
-		Open                & 0.89   & 0.84 & 0.71 & 0.52 & 0.24 & 0.010  & 0.21 & 0.50 & 0.72 & 0.85 & 0.89   		\\ \hline
-		Matched             & 0.46   & 0.46 & 0.46 & 0.46 & 0.46 & 0.47   & 0.47 & 0.46 & 0.46 & 0.45 & 0.45   		\\ \hline
-		Resistor            & 0.61   & 0.74 & 0.78 & 0.76 & 0.66 & 0.51   & 0.33 & 0.14 & 0.19 & 0.41 & 0.61   		\\ \hline
-		Capacitor           & 0.91   & 0.85 & 0.70 & 0.50 & 0.22 & 0.0065 & 0.26 & 0.54 & 0.75 & 0.87 & 0.90   		\\ \hline
+		Short (V)           & 0.0065 & 0.26 & 0.58 & 0.81 & 0.94 & 0.97   & 0.90 & 0.74 & 0.54 & 0.25 & 0.0065 		\\ \hline
+		Open (V)            & 0.89   & 0.84 & 0.71 & 0.52 & 0.24 & 0.010  & 0.21 & 0.50 & 0.72 & 0.85 & 0.89   		\\ \hline
+		Matched (V)         & 0.46   & 0.46 & 0.46 & 0.46 & 0.46 & 0.47   & 0.47 & 0.46 & 0.46 & 0.45 & 0.45   		\\ \hline
+		Resistor (V)        & 0.61   & 0.74 & 0.78 & 0.76 & 0.66 & 0.51   & 0.33 & 0.14 & 0.19 & 0.41 & 0.61   		\\ \hline
+		Capacitor (V)       & 0.91   & 0.85 & 0.70 & 0.50 & 0.22 & 0.0065 & 0.26 & 0.54 & 0.75 & 0.87 & 0.90   		\\ \hline
 		\end{tabular}
 		\caption{Analysis 2.3}
 		\label{}
@@ -206,8 +205,6 @@
 	Lower Frequency of 2.5 SWR                   & 156.7 MHz \\
 	Higher Frequency of 2.5 SWR                  & 222.7 MHz            
 	\end{tabular}
-	\caption{Nework Analyzer - Scanner Antenna}
-	\label{}
 \end{table}
 
 \subsection{Analysis}
