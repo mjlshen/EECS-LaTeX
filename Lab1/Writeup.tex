@@ -213,24 +213,24 @@
 	\item \textbf{FINISH ME}
 	
 	%Analysis 3.2
-	\item Using Eq. XXX for the reflection coefficient and the fact that $Z_0$ = 50 $\Omega$,
+	\item Using Eq. 2 for the reflection coefficient and the fact that $Z_0$ = 50 $\Omega$,
 	\begin{equation}
 		\Gamma = \frac{Z_L-Z_0}{Z_l+Z_0}
 	\end{equation}
-	The theoretical values for $\Gamma$ are shown in Table XXX. Furthermore, by converting our measured data from the network analyzer from the dB scale to the linear scale using Eq. XXX,
+	The theoretical values for $\Gamma$ are shown in Table 8. Furthermore, by converting our measured data from the network analyzer from the dB scale to the linear scale using Eq. 3,
 	\begin{equation}
 		\vert\Gamma\vert_{linear} = 10^{\mid\Gamma\mid_{dB}/20}
 	\end{equation}
 	
 	\begin{table}[H]
 	\centering
-		\begin{tabular}{|l|c|c|c|}
+		\begin{tabular}{|l|c|c|}
 		\hline
-		\textbf{Load}     & $\vert\Gamma\vert_{dB}$ & $\vert\Gamma\vert_{linear}$ & $\vert\Gamma\vert_{theoretical}$ \\ \hline
-		Short (uncal)     & 0.751 	  & 1.09      &    1      \\ \hline
-		Short (cal)       & 1.00      & 1.12      &    1      \\ \hline
-		Open              & 1.00  	  & 1.12      &    1      \\ \hline
-		50 $\Omega$ (matched) & 0.001 & 1.00  	  &    0      \\ \hline
+		\textbf{Load}     & $\vert\Gamma\vert_{linear}$ & $\vert\Gamma\vert_{theoretical}$ \\ \hline
+		Short (uncal)         & 1.09      &    1      \\ \hline
+		Short (cal)           & 1.12      &    1      \\ \hline
+		Open                  & 1.12      &    1      \\ \hline
+		50 $\Omega$ (matched) & 1.00  	 &    0      \\ \hline
 		\end{tabular}
 		\caption{Analysis 3.2}
 		\label{}
@@ -241,23 +241,19 @@
 	\begin{equation} 
 		S = \frac{1 + \vert\Gamma\vert}{1 - \vert\Gamma\vert}
 	\end{equation}
-	Since $\Gamma$ can be assumed to be real, $\Gamma$ = $\vert\Gamma\vert$. Thus, Eq. XXX can be rewritten as:
-	\begin{equation}
-		\Gamma = \frac{S - 1}{S + 1}
-	\end{equation}
-	By substituting the measured $S_{min}$ = 1.513, it follows that $\Gamma$ = 0.204. By solving Eq. XXX for $Z_L$, again using the fact that $\Gamma = \vert\Gamma\vert$:
+	By solving Eq. 2 for $Z_L$, and using the fact that $\Gamma = \vert\Gamma\vert$ because $\Gamma$ can be assumed to be real,
 	\begin{equation}
 		Z_L = Z_0\frac{1 + \Gamma}{1 - \Gamma} = Z_0 S
 	\end{equation}	 
-	Finally, using Eq. XXX and the fact that $Z_0$ = 50 $\Omega$, it follows that $Z_L$ = 75.65 $\Omega$ at the frequency where the SWR minimum was measured, 170.5 MHz.
+	Finally, using Eq. 5 and the fact that $Z_0$ = 50 $\Omega$, it follows that $Z_L$ = 75.65 $\Omega$ at the frequency where the SWR minimum was measured, 170.5 MHz.
 \end{enumerate}
 \subsection{Questions}
 \begin{enumerate}
 	%Question 3.1
-	\item \textbf{FINISH ME}
+	\item This antenna would not be good for broad-band communication systems between 20 Mhz - 2 GHz because the SWR is less than 2.5 only between 156.7 - 222.7 MHz from the Scanner Antenna SWR data. 
 	
 	%Question 3.2
-	\item Since $Z_L$ = 75.65 $\Omega$ and using Eq. XXX and XXX
+	\item Since $Z_L$ = 75.65 $\Omega$ and using Eq. 4 and 5
 	\begin{enumerate}
 		\item A 50 $\Omega$ transmission line system is what the antenna was tested with and results in $S$ = 1.513 at 170.5 MHz. Thus, the antenna works well with this system.
 		\item A 75 $\Omega$ transmission line system is nearly matched and results in $S$ = 1.009 at 170.5 MHz. Thus, the antenna works well with this system.
