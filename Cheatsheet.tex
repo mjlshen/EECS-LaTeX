@@ -97,69 +97,41 @@
      \Large{\textbf{EECS 230 Cheat Sheet}} \\
 \end{center}
 
-\section{Document classes}
+\section{Constants}
 \begin{tabular}{@{}ll@{}}
-\verb!book!    & Default is two-sided. \\
-\verb!report!  & No \verb!\part! divisions. \\
-\verb!article! & No \verb!\part! or \verb!\chapter! divisions. \\
-\verb!letter!  & Letter (?). \\
-\verb!slides!  & Large sans-serif font.
+$q$              & $1.6 \times 10^{19}$ C\\
+$\varepsilon_0$  & $8.854 \times 10^{-12}$ F/m\\
+$\mu_0$          & $4\pi\times 10^{-7}$ H/m \\
+\verb!letter!    & Letter (?). \\
+\verb!slides!    & Large sans-serif font.
 \end{tabular}
 
-Used at the very beginning of a document:
-\verb!\documentclass{!\textit{class}\verb!}!.  Use
-\verb!\begin{document}! to start contents and \verb!\end{document}! to
-end the document.
 
-
-\subsection{Common \texttt{documentclass} options}
+\subsection{Electromagnetic Spectrum}
 \newlength{\MyLen}
 \settowidth{\MyLen}{\texttt{letterpaper}/\texttt{a4paper} \ }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\texttt{10pt}/\texttt{11pt}/\texttt{12pt} & Font size. \\
-\texttt{letterpaper}/\texttt{a4paper} & Paper size. \\
-\texttt{twocolumn} & Use two columns. \\
-\texttt{twoside}   & Set margins for two-sided. \\
-\texttt{landscape} & Landscape orientation.  Must use
-                     \texttt{dvips -t landscape}. \\
-\texttt{draft}     & Double-space lines.
+300MHz - 3GHz  & TV Broadcasting, Cell phones \\
+30MHz - 300MHz & TV Broadcasting, FM Radio \\
+300kHZ - 3MHz  & AM Radio \\
+300Hz - 3kHz   & Telephone \\
 \end{tabular}
 
-Usage:
-\verb!\documentclass[!\textit{opt,opt}\verb!]{!\textit{class}\verb!}!.
 
-
-\subsection{Packages}
+\section{Waves and Phasors}
 \settowidth{\MyLen}{\texttt{multicol} }
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-%\begin{tabular}{@{}ll@{}}
-\texttt{fullpage}  &  Use 1 inch margins. \\
-\texttt{anysize}   &  Set margins: \verb!\marginsize{!\textit{l}%
-                        \verb!}{!\textit{r}\verb!}{!\textit{t}%
-                        \verb!}{!\textit{b}\verb!}!.            \\
-\texttt{multicol}  &  Use $n$ columns: 
-                        \verb!\begin{multicols}{!$n$\verb!}!.   \\
-\texttt{latexsym}  &  Use \LaTeX\ symbol font. \\
-\texttt{graphicx}  &  Show image:
-                        \verb!\includegraphics[width=!%
-                        \textit{x}\verb!]{!%
-                        \textit{file}\verb!}!. \\
-\texttt{url}       & Insert URL: \verb!\url{!%
-                        \textit{http://\ldots}%
-                        \verb!}!.
-\end{tabular}
+$y(x,t) = Ae^{-\alpha x}cos(\omega t - \beta x + \phi_0)$ \\
+$u_p = \frac{\lambda}{T} = f\lambda = \frac{\omega}{\beta}$ \\
 
-Use before \verb!\begin{document}!. 
-Usage: \verb!\usepackage{!\textit{package}\verb!}!
+If the signs of $\omega t$ and $\beta x$ are the same, the wave is traveling in the negative x-direction, else the positive x-direction.
 
 
-\subsection{Title}
+\subsection{Phasor Equivalents}
 \settowidth{\MyLen}{\texttt{.author.text.} }
 \begin{tabular}{@{}p{\the\MyLen}%
                 @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\author{!\textit{text}\verb!}! & Author of document. \\
+$y(x,t)$ & $Ae^{-\alpha x}e^{j(\beta x + \phi_0)}$ \\
 \verb!\title{!\textit{text}\verb!}!  & Title of document. \\
 \verb!\date{!\textit{text}\verb!}!   & Date. \\
 \end{tabular}
