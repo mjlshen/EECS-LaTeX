@@ -7,3 +7,6 @@
 
 # Matlab autosave #
 *.asv
+
+#Image junk files #
+*.db
