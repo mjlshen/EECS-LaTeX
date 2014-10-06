@@ -1,9 +1,10 @@
-\documentclass[10pt,landscape]{article}
+\documentclass[11pt,landscape]{article}
 \usepackage{multicol}
 \usepackage{calc}
 \usepackage{ifthen}
 \usepackage[landscape]{geometry}
 \usepackage{hyperref}
+\usepackage{amsmath}
 
 % To make this come out properly in landscape mode, do one of the following
 % 1.
@@ -102,11 +103,11 @@
 $q$              & $1.6 \times 10^{19}$ C\\
 $\varepsilon_0$  & $8.854 \times 10^{-12}$ F/m\\
 $\mu_0$          & $4\pi\times 10^{-7}$ H/m \\
-\verb!letter!    & Letter (?). \\
-\verb!slides!    & Large sans-serif font.
 \end{tabular}
 
-
+\section{Identities}
+$e^{jx} + e^{-jx} = 2cosx$ \\
+$e^{jx} - e^{-jx} = 2sinx$
 \subsection{Electromagnetic Spectrum}
 \newlength{\MyLen}
 \settowidth{\MyLen}{\texttt{letterpaper}/\texttt{a4paper} \ }
@@ -124,102 +125,47 @@ $\mu_0$          & $4\pi\times 10^{-7}$ H/m \\
 $y(x,t) = Ae^{-\alpha x}cos(\omega t - \beta x + \phi_0)$ \\
 $u_p = \frac{\lambda}{T} = f\lambda = \frac{\omega}{\beta}$ \\
 
-If the signs of $\omega t$ and $\beta x$ are the same, the wave is traveling in the negative x-direction, else the positive x-direction.
+If the signs of $\omega t$ and $\beta x$ are the same, the wave is traveling in the negative x-direction, else the positive x-direction. \\
+$y(x,t) = Ae^{-\alpha x}e^{j(\beta x + \phi_0)}$ \\
 
 
-\subsection{Phasor Equivalents}
-\settowidth{\MyLen}{\texttt{.author.text.} }
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-$y(x,t)$ & $Ae^{-\alpha x}e^{j(\beta x + \phi_0)}$ \\
-\verb!\title{!\textit{text}\verb!}!  & Title of document. \\
-\verb!\date{!\textit{text}\verb!}!   & Date. \\
-\end{tabular}
-
-These commands go before \verb!\begin{document}!.  The declaration
-\verb!\maketitle! goes at the top of the document.
-
-\subsection{Miscellaneous}
-\settowidth{\MyLen}{\texttt{.pagestyle.empty.} }
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\pagestyle{empty}!     &   Empty header, footer
-                                 and no page numbers. \\
-\verb!\tableofcontents!      &   Add a table of contents here. \\
-
-\end{tabular}
+\section{Transmission Line Equations}
+$-\dfrac{d\tilde{V}(z)}{dz} = (R' + j\omega L')\tilde{I}(z)$ \\
+$-\dfrac{d\tilde{I}(z)}{dz} = (G' + j\omega C')\tilde{V}(z)$ \\
+$ \tilde{V}(z) = V_0^+ e^{-\gamma z} + V_0^- e^{\gamma z} $ \\
+$ \tilde{I}(z) = I_0^+ e^{-\gamma z} + I_0^- e^{\gamma z} $ \\
+$ Z_0 = \frac{V_0^+}{I_0^+} = \frac{-V_0^-}{I_0^-} $ \\
+$Z_0 = \sqrt{\dfrac{R' + j\omega L'}{G' + j\omega C'}}$ \\
+$\gamma = \alpha + j\beta = \sqrt{(R'+j\omega L')(G' + j\omega C')}$ \\
+$\vert\tilde{V}(z)\vert = \vert V_0^+ \vert\sqrt{[e^{-2\alpha z} + \vert\Gamma\vert^2e^{2\alpha z} + 2\vert\Gamma\vert cos(2\beta z + \varphi_{\Gamma})]}$
 
 
-
-\section{Document structure}
-\begin{multicols}{2}
-\verb!\part{!\textit{title}\verb!}!  \\
-\verb!\chapter{!\textit{title}\verb!}!  \\
-\verb!\section{!\textit{title}\verb!}!  \\
-\verb!\subsection{!\textit{title}\verb!}!  \\
-\verb!\subsubsection{!\textit{title}\verb!}!  \\
-\verb!\paragraph{!\textit{title}\verb!}!  \\
-\verb!\subparagraph{!\textit{title}\verb!}!
-\end{multicols}
-{\raggedright
-Use \verb!\setcounter{secnumdepth}{!$x$\verb!}! suppresses heading
-numbers of depth $>x$, where \verb!chapter! has depth 0.
-Use a \texttt{*}, as in \verb!\section*{!\textit{title}\verb!}!,
-to not number a particular item---these items will also not appear
-in the table of contents.
-}
-
-\subsection{Text environments}
-\settowidth{\MyLen}{\texttt{.begin.quotation.}}
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\begin{comment}!    &  Comment (not printed). Requires \texttt{verbatim} package. \\
-\verb!\begin{quote}!      &  Indented quotation block. \\
-\verb!\begin{quotation}!  &  Like \texttt{quote} with indented paragraphs. \\
-\verb!\begin{verse}!      &  Quotation block for verse.
-\end{tabular}
-
-\subsection{Lists}
-\settowidth{\MyLen}{\texttt{.begin.description.}}
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\begin{enumerate}!        &  Numbered list. \\
-\verb!\begin{itemize}!          &  Bulleted list. \\
-\verb!\begin{description}!      &  Description list. \\
-\verb!\item! \textit{text}      &  Add an item. \\
-\verb!\item[!\textit{x}\verb!]! \textit{text}
-                                &  Use \textit{x} instead of normal
-                        bullet or number.  Required for descriptions. \\
-\end{tabular}
+\subsection{Lossless Line}
+$\alpha = 0$, $\beta = \omega\sqrt{L'C'} $ \\
+$ Z_0 = \sqrt{\frac{L'}{C'}} $ \\
+$ \Gamma = \dfrac{Z_L - Z_0}{Z_L + Z_0} = \dfrac{z_L - 1}{z_L + 1} = \dfrac{I_0^-}{I_0^+} = -\dfrac{V_0^-}{V_0^+}$ \\
+$ S = \dfrac{1 + \vert\Gamma\vert}{1 - \vert\Gamma\vert}$
 
 
+\subsection{Wave Impedance}
+$Z_{in} = Z_0\left(\dfrac{1 + \Gamma e^{j\beta l}}{1 - \Gamma e^{j\beta l}}\right)$ \\
+$Z_{in} = Z_0\left(\dfrac{z_L + jtan\beta l}{1 + jz_Ltan\beta l}\right)$ \\
+$V_0^+ = \left(\dfrac{e{V}_gZ_{in}}{Z_g + Z_{in}}\right)\left(\dfrac{1}{e^{j\beta l}+ \Gamma e^{-j\beta l}}\right)$ \\
+$v(d, t) = \Re[\tilde{V}(d)e^{j\omega t}]$
 
 
-\subsection{References}
-\settowidth{\MyLen}{\texttt{.pageref.marker..}}
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\label{!\textit{marker}\verb!}!   &  Set a marker for cross-reference, 
-                          often of the form \verb!\label{sec:item}!. \\
-\verb!\ref{!\textit{marker}\verb!}!   &  Give section/body number of marker. \\
-\verb!\pageref{!\textit{marker}\verb!}! &  Give page number of marker. \\
-\verb!\footnote{!\textit{text}\verb!}!  &  Print footnote at bottom of page. \\
-\end{tabular}
+\subsection{Special Cases}
+$Z_{in}^{sc} = jZ_0 tan\beta l$ \\
+$Z_{in}^{oc} = -jZ_0 cot\beta l$ \\
+$Z_0 = \sqrt{Z_{in}^{sc}Z_{in}^{oc}}$ \\
+$tan\beta l = \sqrt{-\dfrac{Z_{in}^{sc}}{Z_{in}^{oc}}}$ \\
+$Z_in = \dfrac{Z_0^2}{Z_L}$ for quarter-wavelength transformers
 
-
-\subsection{Floating bodies}
-\settowidth{\MyLen}{\texttt{.begin.equation..place.}}
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-\verb!\begin{table}[!\textit{place}\verb!]!     &  Add numbered table. \\
-\verb!\begin{figure}[!\textit{place}\verb!]!    &  Add numbered figure. \\
-\verb!\begin{equation}[!\textit{place}\verb!]!  &  Add numbered equation. \\
-\verb!\caption{!\textit{text}\verb!}!           &  Caption for the body. \\
-\end{tabular}
-
-The \textit{place} is a list valid placements for the body.  \texttt{t}=top,
-\texttt{h}=here, \texttt{b}=bottom, \texttt{p}=separate page, \texttt{!}=place even if ugly.  Captions and label markers should be within the environment.
-
+\subsection{Power}
+$P_{av}^i = \dfrac{\vert V_0^+ \vert^2}{2Z_0}$ Average Power from the initial wave \\
+$P_{av}^r = -\vert\Gamma\vert^2P_{av}^i$ Average Power from the reflected wave \\
+$P_{av} = P_{av}^i + P_{av}^r$ \\
+$P_{av} = \frac{1}{2}\vert\tilde{I}_L\vert^2R_L$
 %---------------------------------------------------------------------------
 
 \section{Text properties}
