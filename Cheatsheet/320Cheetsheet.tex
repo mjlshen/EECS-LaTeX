@@ -23,15 +23,6 @@
 % was hacked in; if you make it better, let me know...
 
 
-% 2008-04
-% Changed page margin code to use the geometry package. Also added code for
-% conditional page margins, depending on paper size. Thanks to Uwe Ziegenhagen
-% for the suggestions.
-
-% 2006-08
-% Made changes based on suggestions from Gene Cooperman. <gene at ccs.neu.edu>
-
-
 % To Do:
 % \listoffigures \listoftables
 % \setcounter{secnumdepth}{0}
@@ -97,7 +88,7 @@
 \setlength{\columnsep}{2pt}
 
 \begin{center}
-     \Large{\textbf{EECS 230 Cheat Sheet}} \\
+     \Large{\textbf{EECS 320 Cheat Sheet}} \\
 \end{center}
 
 \section{Constants}
@@ -107,24 +98,18 @@ $\varepsilon_0$  & $8.854 \times 10^{-12}$ F/m\\
 $\mu_0$          & $4\pi\times 10^{-7}$ H/m \\
 \end{tabular}
 
-\section{Identities}
-$e^{jx} + e^{-jx} = 2cosx$ \\
-$e^{jx} - e^{-jx} = 2sinx$
-\subsection{Electromagnetic Spectrum}
-\newlength{\MyLen}
-\settowidth{\MyLen}{\texttt{letterpaper}/\texttt{a4paper} \ }
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-300MHz - 3GHz  & TV Broadcasting, Cell phones \\
-30MHz - 300MHz & TV Broadcasting, FM Radio \\
-300kHZ - 3MHz  & AM Radio \\
-300Hz - 3kHz   & Telephone \\
+\section{Crystal Structure}
+\begin{tabular}{@{}ll@{}}
+Simple Cubic     & 1 atom per unit cell\\
+BCC				 & 2 atoms per unit cell\\
+FCC		         & 4 atoms per unit cell\\
+Diamond Lattice  & 8 atoms per unit cell\\
 \end{tabular}
+\subsection{Miller Indices}
+Shift axes around to find intercepts, divide by common denominator, take the inverse to find (h k l). [h k l] is just the normal vector. Must be integer values.
 
-
-\section{Waves and Phasors}
-\settowidth{\MyLen}{\texttt{multicol} }
-$y(x,t) = Ae^{-\alpha x}cos(\omega t - \beta x + \phi_0)$ \\
+\section{Bandgap}
+Insulators have a bandgap of 5-7 eV, Semiconductors have a bandgap of ~1 eV, Conductors have $E_v > E_c$. \\
 $u_p = \frac{\lambda}{T} = f\lambda = \frac{\omega}{\beta}$ \\
 
 If the signs of $\omega t$ and $\beta x$ are the same, the wave is traveling in the negative x-direction, else the positive x-direction. \\
@@ -173,17 +158,17 @@ $P_{av} = \frac{1}{2}\vert\tilde{I}_L\vert^2R_L = \frac{1}{2}\Re(V_{in}I^*_{in})
 
 \end{multicols}
 
-\begin{multicols}{2}
-\setlength{\premulticols}{1pt}
-\setlength{\postmulticols}{1pt}
-\setlength{\multicolsep}{1pt}
-\setlength{\columnsep}{2pt}
-\begin{figure}[H]
-    \includegraphics[scale=0.13]{./Images/TLtypes.jpg}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[scale=0.7]{./Images/smithchart.jpg}
-\end{figure}
-\end{multicols}
-
+%\begin{multicols}{2}
+%\setlength{\premulticols}{1pt}
+%\setlength{\postmulticols}{1pt}
+%\setlength{\multicolsep}{1pt}
+%\setlength{\columnsep}{2pt}
+%\begin{figure}[H]
+%    \includegraphics[scale=0.13]{./Images/TLtypes.jpg}
+%\end{figure}
+%\begin{figure}[H]
+%    \includegraphics[scale=0.7]{./Images/smithchart.jpg}
+%\end{figure}
+%\end{multicols}
+%
 \end{document}
