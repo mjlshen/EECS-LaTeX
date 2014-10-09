@@ -1,0 +1,176 @@
+\documentclass[11pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+
+% To make this come out properly in landscape mode, do one of the following
+% 1.
+%  pdflatex latexsheet.tex
+%
+% 2.
+%  latex latexsheet.tex
+%  dvips -P pdf  -t landscape latexsheet.dvi
+%  ps2pdf latexsheet.ps
+
+
+% If you're reading this, be prepared for confusion.  Making this was
+% a learning experience for me, and it shows.  Much of the placement
+% was hacked in; if you make it better, let me know...
+
+
+% To Do:
+% \listoffigures \listoftables
+% \setcounter{secnumdepth}{0}
+
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+% Turn off header and footer
+\pagestyle{empty}
+ 
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\textbf{EECS 301 Cheat Sheet}} \\
+\end{center}
+
+\section{Definitions}
+${n\choose k} = \dfrac{n!}{r!(n-r)!} = {n\choose n-k}$ \\
+$P(A\vert B) = \dfrac{P(A\cap B)}{P(B)}$ \\
+Independent if $P(A\cap B) = P(A)P(B)$ \\
+$P\{X = k\} = {N\choose k}p^k (1-p)^{1-k}$ \\
+
+
+\section{Conditional Probability}
+$P(\bar{B}\vert A) = 1 - P(B\vert A)$ \\
+$P(B\cup C\vert A) = P(B\vert A) + P(C\vert A) - P((B\cap C)\vert A)$ \\
+$P(B\vert A) = \dfrac{P(A\vert B)P(B)}{P(A)}$ \\
+$P(B) = P(B\vert A)P(A) + P(B\vert\bar{A})P(\bar{A})$ \\
+$P(A\cap B\cap C) = P(C\vert A\cap B)P(B\vert A)P(A)$ 
+
+
+\subsection{Binomial}
+$(p+q)^N = \sum^N_{k = 0}{N\choose k}p^k q^{N-k}$
+
+
+\section{Bandgap}
+Insulators have a bandgap of 5-7 eV, Semiconductors have a bandgap of ~1 eV, Conductors have $E_v > E_c$. \\
+$u_p = \frac{\lambda}{T} = f\lambda = \frac{\omega}{\beta}$ \\
+
+If the signs of $\omega t$ and $\beta x$ are the same, the wave is traveling in the negative x-direction, else the positive x-direction. \\
+$y(x,t) = Ae^{-\alpha x}e^{j(\beta x + \phi_0)}$ \\
+
+
+\section{Transmission Line Equations}
+$-\dfrac{d\tilde{V}(z)}{dz} = (R' + j\omega L')\tilde{I}(z)$ \\
+$-\dfrac{d\tilde{I}(z)}{dz} = (G' + j\omega C')\tilde{V}(z)$ \\
+$ \tilde{V}(z) = V_0^+ e^{-\gamma z} + V_0^- e^{\gamma z} $ \\
+$ \tilde{I}(z) = I_0^+ e^{-\gamma z} + I_0^- e^{\gamma z} $ \\
+$ Z_0 = \frac{V_0^+}{I_0^+} = \frac{-V_0^-}{I_0^-} $ \\
+$Z_0 = \sqrt{\dfrac{R' + j\omega L'}{G' + j\omega C'}}$ \\
+$\gamma = \alpha + j\beta = \sqrt{(R'+j\omega L')(G' + j\omega C')}$ \\
+$\vert\tilde{V}(z)\vert = \vert V_0^+ \vert\sqrt{[e^{-2\alpha z} + \vert\Gamma\vert^2e^{2\alpha z} + 2\vert\Gamma\vert cos(2\beta z + \varphi_{\Gamma})]}$
+$\vert\tilde{V}\vert_{max} = \vert V_0^+ \vert (1+\vert\Gamma\vert)$, $\vert\tilde{V}\vert_{min} = \vert V_0^+ \vert (1-\vert\Gamma\vert)$
+
+
+\subsection{Lossless Line}
+$\alpha = 0$, $\beta = \omega\sqrt{L'C'} $ \\
+$ Z_0 = \sqrt{\frac{L'}{C'}} $ \\
+$ \Gamma = \dfrac{Z_L - Z_0}{Z_L + Z_0} = \dfrac{z_L - 1}{z_L + 1} = \dfrac{I_0^-}{I_0^+} = -\dfrac{V_0^-}{V_0^+}$ \\
+$ S = \dfrac{1 + \vert\Gamma\vert}{1 - \vert\Gamma\vert}$
+
+
+\subsection{Wave Impedance}
+$Z_{in} = Z_0\left(\dfrac{1 + \Gamma e^{j\beta l}}{1 - \Gamma e^{j\beta l}}\right)$ \\
+$Z_{in} = Z_0\left(\dfrac{z_L + jtan\beta l}{1 + jz_Ltan\beta l}\right)$ \\
+$V_0^+ = \left(\dfrac{\tilde{V}_gZ_{in}}{Z_g + Z_{in}}\right)\left(\dfrac{1}{e^{j\beta l}+ \Gamma e^{-j\beta l}}\right)$ \\
+$v(d, t) = \Re[\tilde{V}(d)e^{j\omega t}]$
+
+
+\subsection{Special Cases}
+$Z_{in}^{sc} = jZ_0 tan\beta l$ \\
+$Z_{in}^{oc} = -jZ_0 cot\beta l$ \\
+$Z_0 = \sqrt{Z_{in}^{sc}Z_{in}^{oc}}$ \\
+$tan\beta l = \sqrt{-\dfrac{Z_{in}^{sc}}{Z_{in}^{oc}}}$ \\
+$Z_{in} = \dfrac{Z_0^2}{Z_L}$ for quarter-wavelength transformers
+
+\subsection{Power}
+$P_{av}^i = \dfrac{\vert V_0^+ \vert^2}{2Z_0}$ Average Power from the initial wave \\
+$P_{av}^r = -\vert\Gamma\vert^2P_{av}^i$ Average Power from the reflected wave \\
+$P_{av} = P_{av}^i + P_{av}^r$ \\
+$P_{av} = \frac{1}{2}\vert\tilde{I}_L\vert^2R_L = \frac{1}{2}\Re(V_{in}I^*_{in})$
+%---------------------------------------------------------------------------
+
+\end{multicols}
+
+%\begin{multicols}{2}
+%\setlength{\premulticols}{1pt}
+%\setlength{\postmulticols}{1pt}
+%\setlength{\multicolsep}{1pt}
+%\setlength{\columnsep}{2pt}
+%\begin{figure}[H]
+%    \includegraphics[scale=0.13]{./Images/TLtypes.jpg}
+%\end{figure}
+%\begin{figure}[H]
+%    \includegraphics[scale=0.7]{./Images/smithchart.jpg}
+%\end{figure}
+%\end{multicols}
+%
+\end{document}
