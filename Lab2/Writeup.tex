@@ -13,13 +13,17 @@
 \begin{table}[h]
 \centering
 	\begin{tabular}{rl}
-	Patch Cord Length =  	  & 2212 $m$  \\
-	Added Electrical Delay =  & 1808 $ns$      
+	Patch Cord Length =  	  & 0.6229 $m$  \\
+	Added Electrical Delay =  & 0.16806 $ns$      
 	\end{tabular}
 \end{table}
 \subsection{Analysis}
 \begin{enumerate}
-	\item
+	\item 
+		\begin{equation}
+			u_p = \dfrac{2l}{\Delta t}
+		\end{equation}
+		Using the measured data and Eq. 1, the calculated $u_p$ is 
 	\item
 	\item
 	\item
@@ -102,5 +106,59 @@
 \end{enumerate}
 
 \section{Figures and Images}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/251.jpg}
+    \caption{Point-like response for a lossless line}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/252lossless.jpg}
+    \caption{Network Analyzer response for a lossless line}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/252lossy.jpg}
+    \caption{Network Analyzer response for a lossy line}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/253short.jpg}
+    \caption{Network Analyzer response for a shorted load}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/253open.jpg}
+    \caption{Network Analyzer response for an open load}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/253resisitive.jpg}
+    \caption{Network Analyzer response for a resistive load}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/253capacitive.jpg}
+    \caption{Network Analyzer response for a capacitive load}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/253series.jpg}
+    \caption{Network Analyzer response for a series load}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/253parallel.jpg}
+    \caption{Network Analyzer response for a parallel load}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/254noadj.jpg}
+    \caption{Network Analyzer response for the unmatched load}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Images/254adj.jpg}
+    \caption{Network Analyzer response for the matched load with the shorted stub}
+\end{figure}
 \end{document}
