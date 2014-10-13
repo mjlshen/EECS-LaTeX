@@ -30,42 +30,49 @@
 \end{enumerate}
 \subsection{Questions}
 \begin{enumerate}
-	\item
-	\item
-	\item
-	\item
+	\item The line was assumed to be lossless, so $R'$ and $G'$ are both 0.
+	\item A dispersionless line ensures that $u_p$ is not frequency dependent, that is, all waves travel at the same $u_p$. Lossless lines ensure that there is no power loss along the line. We could use this technique to measure the line parameters for a dispersionless line because $u_p$ will be a constant.
+	\item I would not be able to obtain any useful data by analyzing a matched load by adding electrical delay. This is because a matched load completely absorbs a signal, reflecting nothing back, regardless of any phase shift.
+	\item The time delay is added onto the time it takes for the signal to travel down to the shorted termination and back, thus we must use the fact that it travels the length of the cable twice when computing $u_p$.
 \end{enumerate}
 
 \section{Lossy and Lossless Lines on the Smith Chart}
 \subsection{Analysis}
 \begin{enumerate}
-	\item
-	\item
+	\item Stationary Circles
+	\item Spiral into 0
 \end{enumerate}
 \subsection{Questions}
 \begin{enumerate}
-	\item
+	\item If a lossy line is infinite in length, any power sent down the line would be absorbed by the line, that is, no power would be reflected back. Using Eq. XXX, 
+	\begin{equation}
+		P_{av}^r = -\vert\Gamma\vert^2 \frac{\vert V_0^+\vert^2}{2Z_0}
+	\end{equation}
+We can see that this means that $\Gamma$ = 0. Thus, the response should spiral to the origin of the Smith Chart.
 \end{enumerate}
 \section{Impedance Measurements Using the Smith Chart}
 \subsection{Measured Data}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 	\begin{tabular}{rl}
-	Resistor =   & 2212 $\Omega$  \\
-	Capacitor =  & 1808 $pF$      
+	Resistor =   & 10 $\Omega$  \\
+	Capacitor =  & 39 $pF$      
 	\end{tabular}
 \end{table}
 
 \begin{table}[H]
 \centering
-	\begin{tabular}{|c|c|c|c|c|c|}
-	\hline
-	\textbf{Frequency} & \textbf{Cable} & $v_1$ (V) & $v_2$ (V) & $\Delta$T (ns) & $\Delta\varphi\degree$ \\ \hline
-	$f_{1}$ = 100 kHz  & 12"                & 5.65   & 2.55   & -16     & -0.5      \\ \hline
-	                   & 180"               & 5.85   & 2.55   & 60      & 2.7       \\ \hline
-	$f_{2}$ = 100 MHz  & 12"                & 4.35   & 0.133  & 1.48    & 50        \\ \hline
-	                   & 180"               & 3.35   & 0.116  & 1.48    & 50        \\ \hline
-	\end{tabular}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Load}} & \multicolumn{1}{c|}{\textbf{400 MHz}} & \multicolumn{1}{c|}{\textbf{600 MHz}} & \multicolumn{1}{c|}{\textbf{800 MHz}} & \multicolumn{1}{c|}{\textbf{1.0 GHz}} \\ \hline
+Short                               & 0.06031 + j2.208                      & 0.07049 + j3.2748                     & 0.1680 + j4.621                       & 0.01835 + j5.789                      \\ \hline
+Open                                & 51.12 - j927.1                        & -16.49 - j713.9                       & -3.485 - j483.5                       & 8.908 - j304.2                        \\ \hline
+Resistive                           & 11.57 + j19.34                        & 14.05 + j31.05                        & 18.65 + j45.98                        & 28.90 + j66.99                        \\ \hline
+Capacitive                          & 2.895 - j750.6                        & 1.832 - j524.7                        & -2.166 - j377.4                       & 10.91 - j293.2                        \\ \hline
+Series                              & 11.10 + j11.26                        & 14.76 + j28.21                        & 23.72 + j50.55                        & 52.46 + j88.62                        \\ \hline
+Parallel                            & 5.481 + j12.63                        & 2.812 + j23.19                        & 1.168 + j35.15                        & 341.0 + j48.125
+\\ \hline
+\end{tabular}
 	\caption{Voltage and phase measurements for varying signal frequency and cable length}
 	\label{Data 1}
 \end{table}
@@ -78,18 +85,18 @@
 \end{enumerate}
 \subsection{Questions}
 \begin{enumerate}
-	\item
+	\item A short termination has $\Gamma$ = 1, while an open termination has $\Gamma$ = -1. These are represented on opposite sides of the Smith Chart. Therefore, to make a short appear as if it were an open, the transmission line would need to be $\frac{\lambda}{2}$ long. The actual length is frequency dependent because $\lambda = \frac{u_p}{f}$.
 	\item
 \end{enumerate}
 \section{Impedance Matching Using a Single Stub Tuner}
 \subsection{Measured Data}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 	\begin{tabular}{rl}
-	Impedance before Matching =   			 & 2212 $\Omega$  \\
-	Distance between Load and Stub Tuner =   & 2212 $cm$  \\
-	Length of Stub =   						 & 2212 $cm$  \\
-	Impedance after Matching =  			 & 1808 $\Omega$      
+	Impedance before Matching =   			 & 23.79 + j63.00 $\Omega$  \\
+	Distance between Load and Stub Tuner =   & 2.54 $cm$  \\
+	Length of Stub =   						 & 11.2713 $cm$  \\
+	Impedance after Matching =  			 & 185.5 - j11.54 $\Omega$      
 	\end{tabular}
 \end{table}
 \subsection{Analysis}
@@ -100,9 +107,12 @@
 \end{enumerate}
 \subsection{Questions}
 \begin{enumerate}
-	\item
-	\item
-	\item
+	\item No, I was unable to achieve a perfect match with the single stub tuner because a perfect match requires two degrees of freedom, the length of the stub and the distance from the stub to the load, to match the real and imaginary parts of the impedance. I only had the ability to change one, the length of the stub. This allows me to negate the imaginary part of the impedance.
+	\item No, a quarter-wavelength transformer will have the same issue. Since the impedance is complex, a perfect match would require the ability to choose where to place the quarter-wavelength transformer. I did not have this option in lab. However, it is possible that the quarter-wavelength transformer achieves a better match for the unknown load, but it is not guaranteed.
+	\item By using both the single stub tuner and quarter-wavelength transformer in conjunction, a perfect match can be achieved. First, the single stub tuner's length can be adjusted such that the imaginary part of the impedance as seen from the source becomes zero. Then, a quarter wavelength transformer can be inserted between the source. The quarter-wavelength transformer must have a specific impedance, $Z_0$, calculated from Eq. XXX such that it allows the aggregate input impedance, $Z_{in}$, to be matched.
+	\begin{equation}
+		Z_{in} = \dfrac{Z_0^2}{Z_L}
+	\end{equation}
 \end{enumerate}
 
 \section{Figures and Images}
