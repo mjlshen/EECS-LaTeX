@@ -8,27 +8,42 @@
 \author{Michael Shen}
 \maketitle
 
+
 \section{Line Parameters of a Lossless Line}
+
 \subsection{Measured Data}
+
 \begin{table}[h]
 \centering
 	\begin{tabular}{rl}
 	Patch Cord Length =  	  & 0.6229 $m$  \\
-	Added Electrical Delay =  & 0.16806 $ns$      
+	Added Electrical Delay =  & 6.2565 $ns$      
 	\end{tabular}
 \end{table}
+
 \subsection{Analysis}
+
 \begin{enumerate}
 	\item 
 		\begin{equation}
 			u_p = \dfrac{2l}{\Delta t}
 		\end{equation}
-		Using the measured data and Eq. 1, the calculated $u_p$ is 
+		Using the measured data and Eq. 1, the calculated $u_p$ is $1.99\times 10^8$ $m/s$
 	\item
+		\begin{equation}
+			\sqrt{\varepsilon_r} = \dfrac{c}{u_p}
+		\end{equation}
+		Using the result from problem 1 and Eq. 2, the calculated $\varepsilon_r$ is 2.270.
 	\item
+		\begin{equation}
+			\beta = 2\pi f\sqrt{\mu\varepsilon}
+		\end{equation}
+		Using the result from problem 2, Eq. 3, and $\mu = 4\pi\times 10^-7 H/m$, the calculated $\beta$ is $8.489\times 10^6$.
 	\item
 \end{enumerate}
+
 \subsection{Questions}
+
 \begin{enumerate}
 	\item The line was assumed to be lossless, so $R'$ and $G'$ are both 0.
 	\item A dispersionless line ensures that $u_p$ is not frequency dependent, that is, all waves travel at the same $u_p$. Lossless lines ensure that there is no power loss along the line. We could use this technique to measure the line parameters for a dispersionless line because $u_p$ will be a constant.
@@ -36,12 +51,15 @@
 	\item The time delay is added onto the time it takes for the signal to travel down to the shorted termination and back, thus we must use the fact that it travels the length of the cable twice when computing $u_p$.
 \end{enumerate}
 
+
 \section{Lossy and Lossless Lines on the Smith Chart}
+
 \subsection{Analysis}
 \begin{enumerate}
-	\item Stationary Circles
-	\item Spiral into 0
+	\item The display appears to be a couple of circles with a constant $\vert\Gamma\vert\approx 1$. They are relatively stationary in their position on the Smith Chart, with no sprial pattern.
+	\item The display appears to be a pattern spiraling inwards with $\vert\Gamma\vert$ starting around 0.5 and constantly decreasing as the frequency increases. This is because the line is lossy, which means some power is absorbed by the line. Thus, by electrically increasing the length of the line, more and more power will be absorbed by the line, reducing the amount of reflected power and $\vert\Gamma\vert$
 \end{enumerate}
+
 \subsection{Questions}
 \begin{enumerate}
 	\item If a lossy line is infinite in length, any power sent down the line would be absorbed by the line, that is, no power would be reflected back. Using Eq. XXX, 
@@ -50,7 +68,10 @@
 	\end{equation}
 We can see that this means that $\Gamma$ = 0. Thus, the response should spiral to the origin of the Smith Chart.
 \end{enumerate}
+
+
 \section{Impedance Measurements Using the Smith Chart}
+
 \subsection{Measured Data}
 \begin{table}[H]
 \centering
@@ -76,20 +97,28 @@ Parallel                            & 5.481 + j12.63                        & 2.
 	\caption{Voltage and phase measurements for varying signal frequency and cable length}
 	\label{Data 1}
 \end{table}
+
 \subsection{Analysis}
+
 \begin{enumerate}
 	\item
 	\item
 	\item
 	\item
 \end{enumerate}
+
 \subsection{Questions}
+
 \begin{enumerate}
 	\item A short termination has $\Gamma$ = 1, while an open termination has $\Gamma$ = -1. These are represented on opposite sides of the Smith Chart. Therefore, to make a short appear as if it were an open, the transmission line would need to be $\frac{\lambda}{2}$ long. The actual length is frequency dependent because $\lambda = \frac{u_p}{f}$.
 	\item
 \end{enumerate}
+
+
 \section{Impedance Matching Using a Single Stub Tuner}
+
 \subsection{Measured Data}
+
 \begin{table}[H]
 \centering
 	\begin{tabular}{rl}
@@ -99,13 +128,17 @@ Parallel                            & 5.481 + j12.63                        & 2.
 	Impedance after Matching =  			 & 185.5 - j11.54 $\Omega$      
 	\end{tabular}
 \end{table}
+
 \subsection{Analysis}
+
 \begin{enumerate}
 	\item
 	\item
 	\item
 \end{enumerate}
+
 \subsection{Questions}
+
 \begin{enumerate}
 	\item No, I was unable to achieve a perfect match with the single stub tuner because a perfect match requires two degrees of freedom, the length of the stub and the distance from the stub to the load, to match the real and imaginary parts of the impedance. I only had the ability to change one, the length of the stub. This allows me to negate the imaginary part of the impedance.
 	\item No, a quarter-wavelength transformer will have the same issue. Since the impedance is complex, a perfect match would require the ability to choose where to place the quarter-wavelength transformer. I did not have this option in lab. However, it is possible that the quarter-wavelength transformer achieves a better match for the unknown load, but it is not guaranteed.
@@ -114,6 +147,7 @@ Parallel                            & 5.481 + j12.63                        & 2.
 		Z_{in} = \dfrac{Z_0^2}{Z_L}
 	\end{equation}
 \end{enumerate}
+
 
 \section{Figures and Images}
 \begin{figure}[H]
