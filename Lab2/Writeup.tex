@@ -17,14 +17,14 @@
 \centering
 	\begin{tabular}{rl}
 	Patch Cord Length =  	  & 0.6229 $m$  \\
-	Added Electrical Delay =  & 6.2565 $ns$      
+	Added Electrical Delay =  & 6.2565 $ns$
 	\end{tabular}
 \end{table}
 
 \subsection{Analysis}
 
 \begin{enumerate}
-	\item 
+	\item
 		\begin{equation}
 			u_p = \dfrac{2l}{\Delta t}
 		\end{equation}
@@ -38,8 +38,19 @@
 		\begin{equation}
 			\beta = 2\pi f\sqrt{\mu\varepsilon}
 		\end{equation}
-		Using the result from problem 2, Eq. 3, and $\mu = 4\pi\times 10^-7 H/m$, the calculated $\beta$ is $8.489\times 10^6$.
+		\begin{equation}
+			\varepsilon = \varepsilon_0\varepsilon_r
+		\end{equation}
+		Using the result from problem 2, Eq. 3 and 4, $\varepsilon_0 = 8.85\times 10^{-12}$ $F/m$ and $\mu = \mu_0 = 4\pi\times 10^-7$ $H/m$, the calculated $\beta$ is $25.256$.
 	\item
+		\begin{equation}
+			\begin{cases}
+				Z_0 = \sqrt{\dfrac{L}{C}} \\
+				\sqrt{\mu\varepsilon} = \sqrt{LC}
+			\end{cases}
+		\end{equation}
+		Since $Z_0 = 50 \Omega$, solving the system of equations results in $C = 1.00\times 10^{-10}$ $F$ and $L = 2.51\times 10^{-7}$ $H$.		
+		
 \end{enumerate}
 
 \subsection{Questions}
@@ -56,13 +67,13 @@
 
 \subsection{Analysis}
 \begin{enumerate}
-	\item The display appears to be a couple of circles with a constant $\vert\Gamma\vert\approx 1$. They are relatively stationary in their position on the Smith Chart, with no sprial pattern.
-	\item The display appears to be a pattern spiraling inwards with $\vert\Gamma\vert$ starting around 0.5 and constantly decreasing as the frequency increases. This is because the line is lossy, which means some power is absorbed by the line. Thus, by electrically increasing the length of the line, more and more power will be absorbed by the line, reducing the amount of reflected power and $\vert\Gamma\vert$
+	\item The display appears to be a couple of overlapping circles with a constant $\vert\Gamma\vert\approx 1$. They are relatively stationary in their position on the Smith Chart, with no spiral pattern.
+	\item The display appears to be a pattern spiralling inwards with $\vert\Gamma\vert$ starting around 0.5 and constantly decreasing as the frequency increases. This is because the line is lossy, which means some power is absorbed by the line. Thus, by electrically increasing the length of the line, more and more power will be absorbed by the line, reducing the amount of reflected power and $\vert\Gamma\vert$
 \end{enumerate}
 
 \subsection{Questions}
 \begin{enumerate}
-	\item If a lossy line is infinite in length, any power sent down the line would be absorbed by the line, that is, no power would be reflected back. Using Eq. XXX, 
+	\item If a lossy line is infinite in length, any power sent down the line would be absorbed by the line, that is, no power would be reflected back. Using Eq. 6,
 	\begin{equation}
 		P_{av}^r = -\vert\Gamma\vert^2 \frac{\vert V_0^+\vert^2}{2Z_0}
 	\end{equation}
@@ -77,7 +88,7 @@ We can see that this means that $\Gamma$ = 0. Thus, the response should spiral t
 \centering
 	\begin{tabular}{rl}
 	Resistor =   & 10 $\Omega$  \\
-	Capacitor =  & 39 $pF$      
+	Capacitor =  & 39 $pF$
 	\end{tabular}
 \end{table}
 
@@ -125,7 +136,7 @@ Parallel                            & 5.481 + j12.63                        & 2.
 	Impedance before Matching =   			 & 23.79 + j63.00 $\Omega$  \\
 	Distance between Load and Stub Tuner =   & 2.54 $cm$  \\
 	Length of Stub =   						 & 11.2713 $cm$  \\
-	Impedance after Matching =  			 & 185.5 - j11.54 $\Omega$      
+	Impedance after Matching =  			 & 185.5 - j11.54 $\Omega$
 	\end{tabular}
 \end{table}
 
@@ -133,8 +144,24 @@ Parallel                            & 5.481 + j12.63                        & 2.
 
 \begin{enumerate}
 	\item
-	\item
-	\item
+	\begin{enumerate}
+		\item $z_l = \frac{(23.79 + j63.00)}{Z_0} = 0.4758 + j1.260$ $\Omega$
+		\item Attached
+		\item Attached
+		\item Attached
+		\item Since the frequency at which the measurements were made was 500 MHz, $\lambda = \frac{c}{f} = 60cm$ because $\varepsilon_r = 1$. Then, since the distance $d = 2.54$ cm $= 0.0423\lambda$
+		\item $y_d = 0.205 - j0.38$ $\Omega$
+		\item $y_{stub} = j0.38$ $\Omega$
+		\item Attached
+		\item $l = 0.5\lambda + 0.06\lambda - 0.25\lambda = 0.31\lambda$
+		\item $l = 0.31\lambda\times 60\frac{cm}{\lambda} = 18.6$ $cm$ \\
+		This stub length is not uniquely determined, because any $l = l_0 + n\frac{\lambda}{2}$ would also work because the behavior of a line repeats itself every $\frac{\lambda}{2}$.
+	\end{enumerate}
+	\item The experimentally determined stub length was 11.2713 $cm$, shorter than the theoretical stub length of 18.6 $cm$, for a percent difference of 49.1\%. This is because I attempted to minimize the magnitude of the impedance experimentally, not simply minimize the imaginary part of the impedance, as will become apparent in Analysis 3.
+	\item $y_{in} = y_d + y_{stub} = 0.205$ $\Omega$ \\
+		  $z_{in} = \frac{1}{y_{in}} = 4.878$ $\Omega$ \\
+		  $Z_{in} = z_{in}Z_{0} = 243.902$ $\Omega$ \\
+		  The measured input impedance was $185.5 - j11.54$ $\Omega$, quite different from the computed load impedance. However, the magnitude of the measured impedance is 185.86 $\Omega$, for a percent difference of 27\% and is thus is better matched.
 \end{enumerate}
 
 \subsection{Questions}
