@@ -105,24 +105,24 @@
 $q$              & $1.6 \times 10^{-19}$ C\\
 $\varepsilon_0$  & $8.854 \times 10^{-12}$ F/m\\
 $\mu_0$          & $4\pi\times 10^{-7}$ H/m \\
+$u_p$ & $\frac{c}{\sqrt{\varepsilon_r}}$ \\
 \end{tabular}
 
 \section{Identities}
 $e^{jx} + e^{-jx} = 2cosx$ \\
-$e^{jx} - e^{-jx} = 2sinx$
-\subsection{Electromagnetic Spectrum}
+$e^{jx} - e^{-jx} = 2sinx$ \\
+$\hat{\textbf{x}}\times\hat{\textbf{y}} = \hat{\textbf{z}}, 
+\hat{\textbf{y}}\times\hat{\textbf{z}} = \hat{\textbf{x}},
+\hat{\textbf{z}}\times\hat{\textbf{x}} = \hat{\textbf{y}}$ \\
+$\textbf{A}\times\textbf{B} = \hat{\textbf{n}}ABsin\theta_{AB}$ \\
+$\textbf{A}\cdot\textbf{B} = ABcos\theta_{AB}$ \\
+\section{Transients}
 \newlength{\MyLen}
 \settowidth{\MyLen}{\texttt{letterpaper}/\texttt{a4paper} \ }
-\begin{tabular}{@{}p{\the\MyLen}%
-                @{}p{\linewidth-\the\MyLen}@{}}
-300MHz - 3GHz  & TV Broadcasting, Cell phones \\
-30MHz - 300MHz & TV Broadcasting, FM Radio \\
-300kHZ - 3MHz  & AM Radio \\
-300Hz - 3kHz   & Telephone \\
-\end{tabular}
+At t = 0, the source cannot only see $Z_0$ of the transmission line and not the load. Thus, $I_1^+ = \frac{V_g}{R_g + Z_0}$ and $V_1^+ = I_1^+Z_0$. $\Gamma_L = \frac{R_L-Z_0}{R_L+Z_0}$ and $\Gamma_g = \frac{R_g - Z_0}{R_g+Z_0}$. Thus, $V_1^- = \Gamma_LV_1^+$ and $I_1^- = -\Gamma_LI_1^+$. $V_\infty = \frac{V_gR_L}{R_g+R_L}$ and $I_\infty = \frac{V_\infty}{R_L}$
 
 
-\section{Waves and Phasors}
+\section{Electrostatics}
 \settowidth{\MyLen}{\texttt{multicol} }
 $y(x,t) = Ae^{-\alpha x}cos(\omega t - \beta x + \phi_0)$ \\
 $u_p = \frac{\lambda}{T} = f\lambda = \frac{\omega}{\beta}$ \\
