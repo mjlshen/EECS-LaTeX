@@ -92,27 +92,37 @@
 \end{center}
 
 \section{Definitions}
-${n\choose k} = \dfrac{n!}{r!(n-r)!} = {n\choose n-k}$ \\
-$P(A\vert B) = \dfrac{P(A\cap B)}{P(B)}$ \\
-$P\{X = k\} = {N\choose k}p^k (1-p)^{1-k}$ \\
-Independent if $P(A\cap B) = P(A)P(B)$ \\
-Expected Value = $\sum^\infty_{k=0}kP\{X=k\}$
+$E[aX + b] = aE[X] + b$ \\
+$\mathrm{Var}[X] = E[(x-\mu_X)^2] = \int_{-\infty}^{\infty} \! (x-\mu_X)^2f_X(x) \, \mathrm{d}x$ \\
+$\mathrm{Var}[aX] = a^2\mathrm{Var}[X]$ \\
+$\mathrm{Var}[X-b] = \mathrm{Var}[X]$ \\
+Gaussian Distribution $F_X(x) = \Phi(\frac{x-\mu}{\sigma})$ \\
+Gaussian Density $f_X(x) = \dfrac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}$ \\
+$\Phi(x) = \int_{-\infty}^x \! \dfrac{1}{2\pi}e^{-t^2/2} \, \mathrm{d}t$
+\hspace{10pt} $Q(x) = 1-\Phi(x) = \Phi(-x)$ \\
+$E[X^2] = \sigma^2 + \mu^2$ \\
+$F_{X|A}(x) = P\{X\leq x|A\} = \frac{P\{(X\leq x) \cap A\}}{P(A)}$
+$\mathrm{Covariance}(X, Y) = E[(X-E[X])(Y - E[Y])]$
+
+\section{Huffman's Algo}
+\begin{multicols}{2}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+\begin{figure}[H]
+    \includegraphics[scale=0.8]{./Images/2/Huffman.jpg}
+\end{figure}
+Entropy = \\ $-0.73log_2(0.73)$ \\$-0.25log_2(0.25)$ $-0.02log_2(0.02)$
+\end{multicols}
 
 
 
-\section{Conditional Probability}
-$P(\bar{B}\vert A) = 1 - P(B\vert A)$ \\
-$P(B\cup C\vert A) = P(B\vert A) + P(C\vert A) - P((B\cap C)\vert A)$ \\
-$P(B\vert A) = \dfrac{P(A\vert B)P(B)}{P(A)}$ \\
-$P(B) = P(B\vert A)P(A) + P(B\vert\bar{A})P(\bar{A})$ \\
-$P(A\cap B\cap C) = P(C\vert A\cap B)P(B\vert A)P(A)$ 
-
-
-\subsection{Binomial}
-$\sum^N_{k = 0}{N\choose k}p^k q^{N-k} = (p+q)^N$ \\
-$\sum^N_{k = 0}{N\choose k}r^k = (1+r)^N$ \\
-$\sum^{b}_{k=a} r^{k} = \dfrac{r^a - r^{b+1}}{1-r}$ \\
-$\sum^{\infty}_{k=0} kr^{k} = \dfrac{r}{(r-1)^2}$
+\section{Continuous Random Variables}
+Density Function $F_X(x) = P\{X\leq x\} = \int_{-\infty}^x \! f_x(u) \, \mathrm{d}u$ \\
+Cumulative Dist Function $f_x(x) = \frac{\delta F_x(x)}{\delta x}$ \\
+$\int_{-\infty}^{\infty} \! f_x(x) \, \mathrm{d}x = 1$ \hspace{10pt} $f_X(x) \geq 0$ \\
+$E[X] = \int \! xf_X(x) \, \mathrm{d}x$
 
 %---------------------------------------------------------------------------
 
@@ -123,25 +133,17 @@ $\sum^{\infty}_{k=0} kr^{k} = \dfrac{r}{(r-1)^2}$
 \setlength{\postmulticols}{1pt}
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
-
 \begin{figure}[H]
-    \includegraphics[scale=0.46]{./Images/1/Airplanes.jpg}
+    \includegraphics[scale=0.53]{./Images/2/DenDisSolve.jpg}
 \end{figure}
 \begin{figure}[H]
-    \includegraphics[scale=0.46]{./Images/1/Communication.jpg}
+    \includegraphics[scale=0.53]{./Images/2/Decision.jpg}
 \end{figure}
 \begin{figure}[H]
-    \includegraphics[scale=0.46]{./Images/1/HammingCode.jpg}
+    \includegraphics[scale=1]{./Images/2/qfunc.jpg}
 \end{figure}
 \begin{figure}[H]
-    \includegraphics[scale=0.46]{./Images/1/Seat1.jpg}
-    \includegraphics[scale=0.46]{./Images/1/Seat2.jpg}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[scale=0.46]{./Images/1/Cointoss.jpg}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[scale=0.8]{./Images/1/RandNumXKCD.jpg}
+    \includegraphics[scale=0.75]{./Images/1/RandNumXKCD.jpg}
 \end{figure}
 \end{multicols}
 
