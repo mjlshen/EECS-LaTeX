@@ -102,7 +102,13 @@ $\Phi(x) = \int_{-\infty}^x \! \dfrac{1}{2\pi}e^{-t^2/2} \, \mathrm{d}t$
 \hspace{10pt} $Q(x) = 1-\Phi(x) = \Phi(-x)$ \\
 $E[X^2] = \sigma^2 + \mu^2$ \\
 $F_{X|A}(x) = P\{X\leq x|A\} = \frac{P\{(X\leq x) \cap A\}}{P(A)}$
-$\mathrm{Covariance}(X, Y) = E[(X-E[X])(Y - E[Y])]$
+$\mathrm{Covariance}(X, Y) = E[(X-E[X])(Y - E[Y])]$ \\
+$\mathrm{Covariance}(X, Y) = E[XY] - E[X]E[Y]$ \\
+$\mathrm{Covariance} = 0$ if X and Y are independent \\
+$\mathrm{Covariance}(aX, Y) = a\mathrm{Covariance}(X, Y)$ \\
+$-\sqrt{Var(X)Var(Y)} \leq \mathrm{Cov}(X, Y) \leq \sqrt{Var(X)Var(Y)}$ \\
+$-1 \leq \rho_{X, Y} \leq 1 = \frac{Covariance(X, Y)}{\sqrt{Var(X)Var(Y)}}$ \\
+Independent if $F_{X, Y}(x, y) = F_X(x)F_Y(y), f_Xf_Y$
 
 \section{Huffman's Algo}
 \begin{multicols}{2}
@@ -133,6 +139,16 @@ $E[X] = \int \! xf_X(x) \, \mathrm{d}x$
 \setlength{\postmulticols}{1pt}
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
+
+\begin{figure}[H]
+    \includegraphics[scale=0.58]{./Images/2/joint1.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.58]{./Images/2/constellation.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.58]{./Images/2/joint2.jpg}
+\end{figure}
 \begin{figure}[H]
     \includegraphics[scale=0.53]{./Images/2/DenDisSolve.jpg}
 \end{figure}
@@ -142,9 +158,35 @@ $E[X] = \int \! xf_X(x) \, \mathrm{d}x$
 \begin{figure}[H]
     \includegraphics[scale=0.95]{./Images/2/qfunc.jpg}
 \end{figure}
-\begin{figure}[H]
-    \includegraphics[scale=0.75]{./Images/1/RandNumXKCD.jpg}
-\end{figure}
-\end{multicols}
 
+\pagebreak
+\section{Joint Distribution}
+$F_{X,Y}(x,y) = P\{X \leq x, Y \leq y\}$
+\begin{figure}[H]
+    \includegraphics[scale=0.9]{./Images/2/jointprop1.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.9]{./Images/2/jointprop2.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.53]{./Images/2/varprob.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.75]{./Images/2/sleep1.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.75]{./Images/2/sleep2.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.75]{./Images/2/sleep3.jpg}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[scale=0.75]{./Images/2/hw7_1.jpg}
+\end{figure}
+
+\end{multicols}
+\begin{figure}[H]
+\centering
+    \includegraphics[scale=0.75]{./Images/2/people_are_stupidxkcd.png}
+\end{figure}
 \end{document}
