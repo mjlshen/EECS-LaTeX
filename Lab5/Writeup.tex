@@ -91,7 +91,7 @@ Distance (cm)	  & 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$
 		\end{tabular}
 	\end{table}
 
-	\item $\eta = \dfrac{4R_L^2(\omega_0M)^2}{((R+R_L)^2+(\omega_0M)^2)^2}$
+	\item $\eta = \dfrac{4R_L^2(\omega_0M)^2}{((R+R_L)^2+(\omega_0M)^2)^2}$ !!!11!!
 \end{enumerate}
 
 \subsection{Questions}
@@ -115,7 +115,7 @@ Distance (cm)	  & 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$
 \begin{enumerate}
 	\item The general decreasing trend is reflected with my measured mutual inductance values, but the data values themselves begin at a higher value and do not decrease as low as the values reflected with the plot. This may be measurement error due to our loops not being perfectly axially-aligned (this was eye-balled). Furthermore, the equations used to generate the provided plots are for filamentary loops; the loops we used in the lab had a non-negligible cross-sectional width and thickness.
 
-	\item
+	\item The mutual inductance for the misaligned loops was lower than that for aligned loops at the same distance away because the magnetic energy is being directed outwards, perpendicular to the first loop. By offsetting the second loop at an angle, some of the magnetic energy from the first loop is missing the second loop, resulting in a lower mutual inductance.
 \end{enumerate}
 
 
@@ -127,15 +127,15 @@ Distance (cm)	  & 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$
 \begin{tabular}{|c|c|c|}
 \hline
 Loop & Experiment & Theory \\ \hline
-9cm & 2cm & \\ \hline
-5cm & 1.5cm & \\ \hline
+9cm & 2cm & 2.5cm\\ \hline
+5cm & 1.5cm & 1.3cm\\ \hline
 \end{tabular}
 \end{table}
 
 \subsection{Analysis}
 
 \begin{enumerate}
-	\item Since $\omega M = R + R_L$, $M_{9cm} = 1.01\times10^{-6}$
+	\item Since $\omega M = R + R_L$, $M_{9cm} = 1.61\times10^{-7}$ and $M_{5cm} = 8.99\times10^{-8}$. According to Figures 5.3 and 5.4 in the lab manual, this means the critical coupling distances are approximately 0.025m and 0.013m for the 9cm and 5cm loops, respectively.
 \end{enumerate}
 
 \subsection{Questions}
@@ -143,8 +143,8 @@ Loop & Experiment & Theory \\ \hline
 \begin{enumerate}
 	\item Since $\omega M = R + R_L$, an increase in the resistance of the shielded-loop resonators results in an increase in the mutual inductance; this leads to an increase in the critical coupling distance.
 	\item Since $\eta = \dfrac{R_L^2}{(R+R_L)^2}$ under strong coupling, an increase in the resistance of the shielded-loop resonators results in a decrease in power transfer efficiency.
-	\item 
-	\item
+	\item As the loops are moved closer together, the odd and even mode frequencies move farther and farther apart. This means that under strong coupling the operating frequencies must be changed accordingly with the distance so that the wireless power transfer system is operating at the new odd or even mode frequencies.
+	\item The theoretical and experimental coupling distances are very similar, considering that both had a visual estimation involved.
 \end{enumerate}
 
 
@@ -160,7 +160,7 @@ Loop & Experiment & Theory \\ \hline
 \subsection{Questions}
 
 \begin{enumerate}
-	\item
+	\item The power level of the VNA must be increased to measure the rectifier because the rectifier is unmatched, resulting in some reflected power. Furthermore, the diodes will convert the negative side of the signal to positive for the rest of the circuit to smooth out.
 \end{enumerate}
 
 \section{Summary}
