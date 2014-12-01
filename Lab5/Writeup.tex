@@ -2,6 +2,7 @@
 \usepackage{gensymb, amsmath, float, graphicx, epstopdf}
 \restylefloat{table}
 \usepackage[margin=0.75in]{geometry}
+\usepackage{multicol}
 \begin{document}
 
 \title{Lab Write-up 5: Coupled Resonators and Voltage Rectification}
@@ -12,6 +13,8 @@
 \section{Measuring the Mutual Inductance}
 
 \subsection{Measured Data}
+As measured in the previous lab, $\omega_{0_{9cm}} = 49.774$ MHz and $\omega_{0_{5cm}} = 89.209$ MHz
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
@@ -33,14 +36,12 @@ Distance (cm)& 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
 Distance (cm)	  & 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$      
-			 	  & 9cm $\vert S_{21}\vert$ (dB) at $\omega = \omega_0$ 
-			 	  & 5cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$      
-			      & 5cm $\vert S_{21}\vert$ (dB) at $\omega = \omega_0$ \\ \hline
-5cm $(30\degree)$ & $0.646\angle115.4\degree$ & -3.19  & $0.802\angle109\degree$   & -5.471 \\ \hline
-5cm $(60\degree)$ & $0.893\angle112.4\degree$ & -8.521 & $0.903\angle109.4\degree$ & -9.555 \\ \hline
+			 	  & 5cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$ \\ \hline
+5cm $(30\degree)$ & $0.646\angle115.4\degree$ & $0.802\angle109\degree$   \\ \hline
+5cm $(60\degree)$ & $0.893\angle112.4\degree$ & $0.903\angle109.4\degree$ \\ \hline
 \end{tabular}
 \end{table}
 \subsection{Analysis}
@@ -62,15 +63,58 @@ Distance (cm)	  & 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$
 		16 & 1.600 & 0.891 \\ \hline
 		\end{tabular}
 	\end{table}
-	\item Since $R_{in\vert\omega=\omega_0} = R_1 + \dfrac{(\omega_0M)^2}{R_2 + R_L}$, $M = \dfrac{\sqrt{(R_{in\vert\omega=\omega_0} - R_1)(R_2 + R_L)}}{\omega_0}$
-	\item
-	\item
+	\item From $R_{in\vert\omega=\omega_0} = R_1 + \dfrac{(\omega_0M)^2}{R_2 + R_L}$, $M = \dfrac{\sqrt{(R_{in\vert\omega=\omega_0} - R_1)(R_2 + R_L)}}{\omega_0}$. Then, using $R_{1_{9cm}} = R_{2_{9cm}} = 0.47 \Omega$, $R_{1_{5cm}} = R_{2_{5cm}} = 0.41 \Omega$, and $R_L = 50\Omega$, values for the mutual inductance are shown below.
+	\begin{table}[H]
+	\centering
+		\begin{tabular}{|c|c|c|}
+		\hline
+		Distance (cm) & $M_{9cm}$ (nH)& $M_{5cm}$ (nH)\\ \hline
+		2  			  & 822 		  & 543  \\ \hline
+		4  			  & 714 		  & 288  \\ \hline
+		6  			  & 492 		  & 154  \\ \hline
+		8  			  & 364 		  & 98.7 \\ \hline
+		10 			  & 278 		  & 83.9 \\ \hline
+		12 			  & 208 		  & 69.7 \\ \hline
+		14 		  	  & 174		   	  & 60.8 \\ \hline
+		16 			  & 152 		  & 55.2 \\ \hline
+		\end{tabular}
+	\end{table}
+	\item After calculating $R_{in}$ as detailed in 1.2.1, the mutual inductances for the misaligned loops was calculated as detailed in 1.2.3 and are shown below.
+	
+	\begin{table}[h]
+	\centering
+		\begin{tabular}{|c|c|c|}
+		\hline
+		Distance (cm)	  & $M_{9cm}$ (nH) & $M_{5cm}$ (nH) \\ \hline
+		5cm $(30\degree)$ & 458 		   & 179   			\\ \hline
+		5cm $(60\degree)$ & 219 		   & 116 		    \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\item $\eta = \dfrac{4R_L^2(\omega_0M)^2}{((R+R_L)^2+(\omega_0M)^2)^2}$
 \end{enumerate}
 
 \subsection{Questions}
+\begin{multicols}{2}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+	
+	\begin{figure}[H]
+	\centering
+   		\includegraphics[scale=0.66]{./Matlab/9cm.eps}
+	\end{figure}
+	\begin{figure}[H]
+	\centering
+		\includegraphics[scale=0.66]{./Matlab/5cm.eps}
+	
+	\end{figure}
+\end{multicols}
 
 \begin{enumerate}
-	\item
+	\item The general decreasing trend is reflected with my measured mutual inductance values, but the data values themselves begin at a higher value and do not decrease as low as the values reflected with the plot. This may be measurement error due to our loops not being perfectly axially-aligned (this was eye-balled). Furthermore, the equations used to generate the provided plots are for filamentary loops; the loops we used in the lab had a non-negligible cross-sectional width and thickness.
+
 	\item
 \end{enumerate}
 
@@ -91,15 +135,15 @@ Loop & Experiment & Theory \\ \hline
 \subsection{Analysis}
 
 \begin{enumerate}
-	\item 
+	\item Since $\omega M = R + R_L$, $M_{9cm} = 1.01\times10^{-6}$
 \end{enumerate}
 
 \subsection{Questions}
 
 \begin{enumerate}
-	\item
-	\item
-	\item
+	\item Since $\omega M = R + R_L$, an increase in the resistance of the shielded-loop resonators results in an increase in the mutual inductance; this leads to an increase in the critical coupling distance.
+	\item Since $\eta = \dfrac{R_L^2}{(R+R_L)^2}$ under strong coupling, an increase in the resistance of the shielded-loop resonators results in a decrease in power transfer efficiency.
+	\item 
 	\item
 \end{enumerate}
 
