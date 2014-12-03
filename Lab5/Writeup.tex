@@ -7,6 +7,7 @@
 
 \title{Lab Write-up 5: Coupled Resonators and Voltage Rectification}
 \author{Michael Shen}
+\date{December 4, 2014}
 \maketitle
 
 
@@ -91,7 +92,22 @@ Distance (cm)	  & 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$
 		\end{tabular}
 	\end{table}
 
-	\item $\eta = \dfrac{4R_L^2(\omega_0M)^2}{((R+R_L)^2+(\omega_0M)^2)^2}$ !!!11!!
+	\item After converting the $\vert S_{21}\vert$ values from dB, $\eta = \vert S_{21}\vert^2$ because $R_S = R_L = 50\Omega$. 
+	\begin{table}[H]
+	\centering
+		\begin{tabular}{|c|c|c|}
+		\hline
+		Distance (cm) & $\eta_{9cm}$ & $\eta_{5cm}$ \\ \hline
+		2  & 0.9552 & 0.7211 \\ \hline
+		4  & 0.8547 & 0.6536 \\ \hline
+		6  & 0.5598 & 0.2539 \\ \hline
+		8  & 0.3792 & 0.1000 \\ \hline
+		10 & 0.2398 & 0.0620 \\ \hline
+		12 & 0.1309 & 0.0284 \\ \hline
+		14 & 0.0811 & 0.0144 \\ \hline
+		16 & 0.0535 & 0.0090 \\ \hline
+		\end{tabular}
+	\end{table} 
 \end{enumerate}
 
 \subsection{Questions}
@@ -135,7 +151,7 @@ Loop & Experiment & Theory \\ \hline
 \subsection{Analysis}
 
 \begin{enumerate}
-	\item Since $\omega M = R + R_L$, $M_{9cm} = 1.61\times10^{-7}$ and $M_{5cm} = 8.99\times10^{-8}$. According to Figures 5.3 and 5.4 in the lab manual, this means the critical coupling distances are approximately 0.025m and 0.013m for the 9cm and 5cm loops, respectively.
+	\item Since $\omega M = R + R_L$, $M_{9cm} = 1.61\times10^{-7}$, and $M_{5cm} = 8.99\times10^{-8}$,  this means the critical coupling distances are approximately 0.025m and 0.013m for the 9cm and 5cm loops, respectively, according to Figures 5.3 and 5.4 in the lab manual.
 \end{enumerate}
 
 \subsection{Questions}
@@ -164,5 +180,5 @@ Loop & Experiment & Theory \\ \hline
 \end{enumerate}
 
 \section{Summary}
-Pls no.
+In this lab I experimentally saw that axially aligned loops with a larger cross-sectional area, placed at a shorter distances apart allow for maximum power transfer efficiency, as expected. However, I learned that when the distance between the loops is short enough, the loops enter in a state known as strong coupling, where two frequencies (odd and even mode) appear where maximum power transfer efficiency occurs instead of the resonant frequency. Finally, I observed the behavior of the full-wave rectifier circuit converting AC to DC, to be utilized more fully in the next lab.
 \end{document}
