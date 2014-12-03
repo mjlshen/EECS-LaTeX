@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{gensymb, amsmath, float, graphicx, epstopdf}
+\restylefloat{table}
+\usepackage[margin=0.75in]{geometry}
+\begin{document}
+
+\title{Lab 5: Coupled Resonators and Voltage Rectification Data}
+\author{Michael Shen}
+\date{}
+\maketitle
+
+\section{Measuring the Mutual Inductance}
+
+\subsection{Measured Data}
+As measured in the previous lab, $\omega_{0_{9cm}} = 49.774$ MHz and $\omega_{0_{5cm}} = 89.209$ MHz
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Distance (cm)& 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$     
+			 & 9cm $\vert S_{21}\vert$ (dB) at $\omega = \omega_0$
+			 & 5cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$     
+			 & 5cm $\vert S_{21}\vert$ (dB) at $\omega = \omega_0$ \\ \hline
+2   		 & $0.195$  & -0.199 & $0.032$  & -1.42   \\ \hline
+4   	 	 & $0.324$  & -0.682 & $0.575$  & -1.847  \\ \hline
+6   	 	 & $0.604$  & -2.52  & $0.847$  & -5.954  \\ \hline
+8		     & $0.755$  & -4.211 & $0.925$  & -10     \\ \hline
+10  		 & $0.843$  & -6.201 & $0.941$  & -12.078 \\ \hline
+12 			 & $0.901$  & -8.832 & $0.954$  & -15.471 \\ \hline
+14 			 & $0.925$  & -10.91 & $0.961$  & -18.42  \\ \hline
+16  		 & $0.938$  & -12.72 & $0.965$  & -20.475 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Distance and Offset	  & 9cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$      
+			 	  & 5cm $\vert\Gamma '_{in}\vert_{\omega=\omega_0}$ \\ \hline
+5cm $(30\degree)$ & $0.646$ & $0.802$   \\ \hline
+5cm $(60\degree)$ & $0.893$ & $0.903$ \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Strong and Weak Coupling}
+
+\subsection{Measured Data}
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Loop & Experiment & Theory \\ \hline
+9cm & 2cm & 2.5cm\\ \hline
+5cm & 1.5cm & 1.3cm\\ \hline
+\end{tabular}
+\end{table}
+
+\section{Measuring the Rectifier}
+
+\subsection{Measured Data}
+
+\begin{enumerate}
+	\item Rectifier input return loss at $\omega = \omega_0$: -0.47 dB
+	\item Rectifier input impedance at $\omega = \omega_0$: 10.07 - j122.6 $\Omega$
+\end{enumerate}
+
+\end{document}
