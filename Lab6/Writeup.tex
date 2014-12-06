@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{gensymb, amsmath, float, graphicx, epstopdf}
+\restylefloat{table}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{multicol}
+\begin{document}
+
+\title{Lab Write-up 6: Impedance Matching and Frequency Tuning}
+\author{Michael Shen}
+\date{December 15, 2014}
+\maketitle
+
+
+\section{Testing the Matching Networks}
+
+\subsection{Measured Data}
+As measured in the previous lab and confirmed in this lab, $\omega_{0_{9cm}} = 46.973$ MHz.
+
+\begin{enumerate}
+	\item Measured output impedance for loop matching network \#1: 14.40 - j20.23 $\Omega$
+	\item Measured output impedance for loop matching network \#2: 15.26 - j20.21 $\Omega$
+	\item Measured output impedance for rectifier matching network: 2.312 - j30.54 $\Omega$
+	\item Input return loss of matched rectifier: -21.904 dB
+	\item Input return loss of matched system at 10cm: -26.527 dB
+\end{enumerate}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Distance (cm) & Input Return Loss (dB) \\ \hline
+2             & -0.702                 \\ \hline
+4             & -1.880                 \\ \hline
+6             & -5.117                 \\ \hline
+8             & -10.631                \\ \hline
+10            & -26.527                \\ \hline
+12            & -10.627                \\ \hline
+14            & -6.917                 \\ \hline
+16            & -3.712                 \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Questions}
+
+\begin{enumerate}
+	\item Why shouldn't we use a length of cable between the matching networks and the loops or the rectifier and its matching network? Why doesn't it matter whether we have a length of line between the matched rectifier and the matched loops?
+
+\end{enumerate}
+
+
+\section{Frequency-Tuned System}
+
+\subsection{Measured Data}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Distance (cm) & Odd Mode Frequency (MHz) & Even Mode Frequency (MHz) \\ \hline
+2             & 40.501                   & 63.172                    \\ \hline
+4             & 43.372                   & 55.549                    \\ \hline
+6             & 45.286                   & 53.008                    \\ \hline
+8             & 46.474                   & 51.358                    \\ \hline
+10            & 47.893                   & 49.672                    \\ \hline
+12            & 48.817                   & 48.817                    \\ \hline
+14            & 48.817                   & 48.817                    \\ \hline
+16            & 48.817                   & 48.817                    \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Distance (cm) & Constant Frequency $\vert S_{21}\vert$ (dB) 
+& Frequency-Tuned $\vert S_{21}\vert$ (dB) \\ \hline
+2             & -7.767                          & -0.621                       \\ \hline
+4             & -4.622                          & -0.558                       \\ \hline
+6             & -2.630                          & -0.663                       \\ \hline
+8             & -1.176                          & -0.733                       \\ \hline
+10            & -0.593                          & -0.743                       \\ \hline
+12            & -0.938                          & -0.938                       \\ \hline
+14            & -1.904                          & -1.904                       \\ \hline
+16            & -3.360                          & -3.360                       \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Analysis}
+
+\begin{enumerate}
+	\item Using (6.33) determine the theoretical power transfer efficiency from 2-16cm
+	\item Using (6.39) determine the theoretical power transfer efficiency at the odd mode frequency from 2-16cm
+	\item Using (6.37) and circuit values plot the maximum power transfer efficiency from 2-16cm
+\end{enumerate}
+
+\subsection{Questions}
+
+\begin{enumerate}
+	\item How does the input reflection coefficient of the matched system behave as the loops are moved away from the matching distance?
+	\item Plot the theoretical efficiency and matched efficiency on the same axis, compare.
+	\item Does the coupling distance with minimum return loss correspond to the coupling distance with Maximum S21 for the constant omega0 system?
+	\item Plot the theoretical efficiency vs measured efficiency for the frequency-tuned system, compare.
+	\item Why is the critical coupling distance different.
+\end{enumerate}
+
+\section{Summary}
+
+\end{document}
