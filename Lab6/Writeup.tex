@@ -14,7 +14,7 @@
 \section{Testing the Matching Networks}
 
 \subsection{Measured Data}
-As measured in the previous lab and confirmed in this lab, $\omega_{0_{9cm}} = 46.973$ MHz.
+As measured in the previous labs and confirmed in this lab, $\omega_{0_{9cm}} = 46.973$ MHz.
 
 \begin{enumerate}
 	\item Measured output impedance for loop matching network \#1: 14.40 - j20.23 $\Omega$
@@ -43,7 +43,7 @@ Distance (cm) & Input Return Loss (dB) \\ \hline
 \subsection{Questions}
 
 \begin{enumerate}
-	\item A length of cable should not be used between the matching networks and the loops or the rectifier and its matching network because the cable will introduce an added electrical length because the system is not matched, very likely causing a phase shift and causing power to be reflected. It does not matter if there is a cable between the matched rectifier and the matched loops because these are already matched, so no power will be reflected.
+	\item A length of cable should not be used between the matching networks and the loops or the rectifier and its matching network because the cable will introduce an added electrical length unaccounted for when designing the matching network, very likely causing a phase shift and causing power to be reflected. It does not matter if there is a cable between the matched rectifier and the matched loops because these all have an impedance of $50 \Omega$, so no power will be reflected regardless of the length of cable.
 
 \end{enumerate}
 
@@ -87,7 +87,7 @@ Distance (cm) & Constant Frequency $\vert S_{21}\vert$ (dB)
 \subsection{Analysis}
 
 \begin{enumerate}
-	\item Using Eq. 6.33, $R_L = 14.83\Omega$, $\omega_0 = 46.974$ MHz, $R = 0.47\Omega$, and the mutual inductance values from the previous lab,
+	\item Using Eq. 6.33, $R_L = 14.83\Omega$, $\omega_0 = 46.974$ MHz, $R = 0.47\Omega$, and the mutual inductance values from the previous lab, the power transfer efficiency, $\eta$, at $\omega_0$ is (MATLAB code attached):
 	\begin{table}[H]
 	\centering
 		\begin{tabular}{|c|c|c|}
@@ -105,7 +105,7 @@ Distance (cm) & Constant Frequency $\vert S_{21}\vert$ (dB)
 	\end{table}
 
 	\item Using Eq. 6.39, $\eta_{odd} = \dfrac{R_L^2}{(R+R_L)^2} = 0.9395$ for distances 2, 4, 6, 8, and 10 cm. Distances from 12-16 cm were not strongly coupled and did not have an odd mode frequency.
-	\item Using Eq. 6.37, the maximum power transfer efficiency values are plotted below. \textbf{MATLAB CODE ATTACHED}
+	\item Using Eq. 6.37, the maximum power transfer efficiency values are plotted below.
 	\begin{figure}[H]
 		\centering
    		\includegraphics[scale = 0.85]{./Matlab/Analysis2_1.eps}
@@ -115,14 +115,22 @@ Distance (cm) & Constant Frequency $\vert S_{21}\vert$ (dB)
 \subsection{Questions}
 
 \begin{enumerate}
-	\item How does the input reflection coefficient of the matched system behave as the loops are moved away from the matching distance?
-	\item Plot the theoretical efficiency and matched efficiency on the same axis, compare.
+	\item The input return loss is at a minimum at the matching distance and increases as the loops are moved away from it. This means that the input reflection coefficient of the matched system was also at a minimum at the matching distance and increased as the loops are moved away from it because the input return loss is effectively the magnitude of the input reflection coefficient.
+	\item The theoretical and measured power transfer efficiencies follow the same general shape. However it appears that the measured data peaks at 8cm instead of the theoretical 10cm (MATLAB code attached).
+	\begin{figure}[H]
+		\centering
+   		\includegraphics[scale = 0.85]{./Matlab/Question2_2.eps}
+	\end{figure}
 	\item Yes, the coupling distance of 10 cm has the minimum return loss and maximum $S_{21}$.
-	\item Plot the theoretical efficiency vs measured efficiency for the frequency-tuned system, compare.
-	\item Why is the critical coupling distance different.
+	\item For distances from 2-10cm, the system was tuned to the odd mode frequency. After 10cm, the system is no longer in strong coupling so $\omega_0$ is the frequency the system was tuned to (MATLAB code attached).
+	\begin{figure}[H]
+		\centering
+   		\includegraphics[scale = 0.85]{./Matlab/Question2_3.eps}
+	\end{figure}
+	\item The critical coupling distance is different because the system is now frequency tuned, allowing power to be efficiently transferred across further distances, also increasing the critical coupling distance. The unmatched critical coupling distance for the 9cm loops was 2.5cm, compared to the matched critical coupling distance determined in the lab to be 10cm.
 \end{enumerate}
 
 \section{Summary}
-In this lab I learned the importance of frequency tuning, specifically that in strong coupling, odd and even mode frequencies result in less power loss than the resonant frequency. Furthermore, I learned how to design matching networks and rectifiers to allow sufficient power transfer to light up an LED.
+In this lab I learned the importance of frequency tuning, specifically that in strong coupling, odd and even mode frequencies result in less power loss than the resonant frequency. Furthermore, I learned how to design matching networks and rectifiers to allow sufficient power transfer to light up an LED over much larger distances when compared to unmatched systems.
 
 \end{document}
