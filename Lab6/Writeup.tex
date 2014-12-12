@@ -24,7 +24,7 @@ As measured in the previous lab and confirmed in this lab, $\omega_{0_{9cm}} = 4
 	\item Input return loss of matched system at 10cm: -26.527 dB
 \end{enumerate}
 
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|}
 \hline
@@ -43,7 +43,7 @@ Distance (cm) & Input Return Loss (dB) \\ \hline
 \subsection{Questions}
 
 \begin{enumerate}
-	\item Why shouldn't we use a length of cable between the matching networks and the loops or the rectifier and its matching network? Why doesn't it matter whether we have a length of line between the matched rectifier and the matched loops?
+	\item A length of cable should not be used between the matching networks and the loops or the rectifier and its matching network because the cable will introduce an added electrical length because the system is not matched, very likely causing a phase shift and causing power to be reflected. It does not matter if there is a cable between the matched rectifier and the matched loops because these are already matched, so no power will be reflected.
 
 \end{enumerate}
 
@@ -51,7 +51,7 @@ Distance (cm) & Input Return Loss (dB) \\ \hline
 \section{Frequency-Tuned System}
 
 \subsection{Measured Data}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
@@ -87,25 +87,29 @@ Distance (cm) & Constant Frequency $\vert S_{21}\vert$ (dB)
 \subsection{Analysis}
 
 \begin{enumerate}
-	\item
-	\begin{table}[h]
+	\item Using Eq. 6.33, $R_L = 14.83\Omega$, $\omega_0 = 46.974$ MHz, $R = 0.47\Omega$, and the mutual inductance values from the previous lab,
+	\begin{table}[H]
 	\centering
-		\begin{tabular}{|c|c|}
+		\begin{tabular}{|c|c|c|}
 		\hline
-		Distance (cm) & $\eta_{\omega_0}$  \\ \hline
-		2             & 0.4408  \\ \hline
-		4             & 0.5358  \\ \hline
-		6             & 0.7962  \\ \hline
-		8             & 0.9280  \\ \hline
-		10            & 0.9163  \\ \hline
-		12            & 0.7733  \\ \hline
-		14            & 0.6491  \\ \hline
-		16            & 0.5519  \\ \hline
+		Distance (cm) & M (nH)& $\eta_{\omega_0}$  \\ \hline
+		2             & 822   & 0.4408  \\ \hline
+		4             & 714   & 0.5358  \\ \hline
+		6             & 492   & 0.7962  \\ \hline
+		8             & 364   & 0.9280  \\ \hline
+		10            & 278   & 0.9163  \\ \hline
+		12            & 208   & 0.7733  \\ \hline
+		14            & 174   & 0.6491  \\ \hline
+		16            & 152   & 0.5519  \\ \hline
 		\end{tabular}
 	\end{table}
 
-	\item Using (6.39) determine the theoretical power transfer efficiency at the odd mode frequency from 2-16cm
-	\item Using (6.37) and circuit values plot the maximum power transfer efficiency from 2-16cm
+	\item Using Eq. 6.39, $\eta_{odd} = \dfrac{R_L^2}{(R+R_L)^2} = 0.9395$ for distances 2, 4, 6, 8, and 10 cm. Distances from 12-16 cm were not strongly coupled and did not have an odd mode frequency.
+	\item Using Eq. 6.37, the maximum power transfer efficiency values are plotted below. \textbf{MATLAB CODE ATTACHED}
+	\begin{figure}[H]
+		\centering
+   		\includegraphics[scale = 0.85]{./Matlab/Analysis2_1.eps}
+	\end{figure}
 \end{enumerate}
 
 \subsection{Questions}
@@ -113,7 +117,7 @@ Distance (cm) & Constant Frequency $\vert S_{21}\vert$ (dB)
 \begin{enumerate}
 	\item How does the input reflection coefficient of the matched system behave as the loops are moved away from the matching distance?
 	\item Plot the theoretical efficiency and matched efficiency on the same axis, compare.
-	\item Does the coupling distance with minimum return loss correspond to the coupling distance with Maximum S21 for the constant omega0 system?
+	\item Yes, the coupling distance of 10 cm has the minimum return loss and maximum $S_{21}$.
 	\item Plot the theoretical efficiency vs measured efficiency for the frequency-tuned system, compare.
 	\item Why is the critical coupling distance different.
 \end{enumerate}
